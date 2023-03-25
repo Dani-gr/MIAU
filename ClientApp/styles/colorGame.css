@@ -8,6 +8,32 @@
 #color-display {
     font-size: 48px;
     margin: 20px 0;
+    padding: 50px;
+    clear: both;
+}
+
+#letters {
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+	border: 1px solid black;
+	padding: 10px;
+	cursor: move;
+    margin-bottom: 10px;
+    height: 50px;
+    clear: both;
+}
+
+#answer {
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+	border: 1px solid black;
+	padding: 10px;
+	cursor: move;
+    margin-bottom: 10px;
+    height: 50px;
+    clear: both;
 }
 
 .letter {
@@ -16,8 +42,17 @@
     height: 40px;
     border: 1px solid #333;
     border-radius: 5px;
+    background-color: #eee;
     margin: 5px;
     cursor: move;
     text-align: center;
     line-height: 40px;
+}
+
+#verify {
+    display: flex;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
