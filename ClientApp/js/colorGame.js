@@ -3,43 +3,67 @@ const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
 const colorDisplay = document.getElementById("color-display");
 
-// TO-DO: Agregar varios colores, y aleatorización de los mismos
+const colors = [
+	"red",
+	"orange",
+	"yellow",
+	"green",
+	"aqua",
+	"blue",
+    "purple"
+]
+let color;
+let letters;
 
-// Inicializar variables
-const color = "blue";
-const letters = ["b", "u", "i", "x", "e", "l"];
-colorDisplay.style.backgroundColor = "#2408f3";
+startGame = function() {
+    // Seleccionar el color y las letras
+    color = colors[Math.floor(Math.random() * colors.length)];
+    letters = color.split("");
+    letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
+    letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
-// Agregar letras al contenedor de letras
-for (let i = 0; i < letters.length; i++) {
-    const letter = document.createElement("div");
-    letter.setAttribute("class", "letter");
-    letter.setAttribute("draggable", "true");
-    letter.innerHTML = letters[i].toUpperCase();
-    letter.id = "letter-" + i;
-    lettersDiv.append(letter);
-}
+    letters.sort(function() {return Math.random() - 0.5;});
 
-// Establecer los tamaños según el número de letras
-lettersDiv.style.width = 50 * letters.length + 20 + "px";
-answerDiv.style.width = 50 * color.length + 20 + "px";
+    colorDisplay.style.backgroundColor = color;
+    answerDiv.style.backgroundColor = "#fff";
 
-// Crear los espacios para la respuesta
-for (let i = 0; i < color.length; i++) {
-	const answerSpace = document.createElement("div");
-	answerSpace.className = "answer-space";
-	answerSpace.id = "answer-space-" + i;
-	answerDiv.appendChild(answerSpace);
-}
+    // Eliminar las letras anteriores
+    for (let i = lettersDiv.childElementCount - 1; i >= 0; i--)
+        lettersDiv.children[i].remove();
+    
+    // Agregar letras al contenedor de letras
+    for (let i = 0; i < letters.length; i++) {
+        const letter = document.createElement("div");
+        letter.setAttribute("class", "letter");
+        letter.setAttribute("draggable", "true");
+        letter.innerHTML = letters[i].toUpperCase();
+        letter.id = "letter-" + i;
+        lettersDiv.append(letter);
+    }
 
-// Hacer que todas las letras sean arrastrables
-document.querySelectorAll('.letter').forEach(
-    function(value) {
+    // Establecer los tamaños según el número de letras
+    lettersDiv.style.width = 50 * letters.length + 20 + "px";
+    answerDiv.style.width = 50 * color.length + 20 + "px";
+
+    // Eliminar los espacios anteriores
+    for (let i = answerDiv.childElementCount - 1; i >= 0; i--)
+        answerDiv.children[i].remove();
+    
+    // Crear los espacios para la respuesta
+    for (let i = 0; i < color.length; i++) {
+        const answerSpace = document.createElement("div");
+        answerSpace.className = "answer-space";
+        answerSpace.id = "answer-space-" + i;
+        answerDiv.appendChild(answerSpace);
+    }
+
+    // Hacer que todas las letras sean arrastrables
+    document.querySelectorAll('.letter').forEach(function(value) {
         value.addEventListener('dragstart', function(e){
             e.dataTransfer.setData('text', this.id);
         });
-    }
-);
+    });
+}
 
 
 document.addEventListener('dragover', function(e) {
@@ -71,20 +95,25 @@ document.addEventListener('drop', function(e) {
     verifyButton.toggleAttribute("disabled", n !== color.length);
 });
 
-// verificar si el nombre del color es correcto
+// Verificar si el nombre del color es correcto
 verifyButton.addEventListener("click", function(){
     let word = "";
     const spaces = document.querySelectorAll(".answer-space");
     spaces.forEach(function(value) {
         word += value.firstChild.innerHTML;
     });
+
     if (word.toUpperCase() === color.toUpperCase()) {
         answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
-        //TO-DO: poner otro color
+        startGame();
+        // Quizá añadir un botón intermedio para darle control al usuario
     } else { 
         answerDiv.style.backgroundColor = "red";
         alert("La respuesta no es correcta :(" +
             "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + color.toUpperCase() + "\"");
+        //startGame(); si no queremos que corrija
     }
 });
+
+startGame();
