@@ -1,15 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>MIAU</title>
-        <style type="text/css">
-            @import url("styles/commonStyles.css");
-        </style>
-    </head>
-    <body>
-        <h1>Hi, _____!</h1>
+<head>
+    <meta charset="UTF-8">
+	<title>MIAU</title>
+	<style>
+		body {
+			background-color: #f8e7a9; /* Amarillo pastel */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
 
-        <!-- To do by Lora -->
-    </body>
+		button {
+			background-color: #1ABC9C; /* Azul turquesa */
+			border: none;
+			border-radius: 8px;
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			padding: 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #148F77; /* Azul turquesa más oscuro */
+		}
+
+		button:focus {
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+    <a href="practiceactivity.html">
+        <button>Modo práctica</button>
+    </a>
+    <a href="studyactivity.html">
+        <button>Modo estudio</button>
+    </a>
+	<button>Tienda</button>
+</body>
 </html>
