@@ -1,0 +1,33 @@
+button:focus {
+    outline: none;
+}
+
+.gato {
+    transition: transform 0.5s ease;
+}
+  
+.gato:hover {
+    transform: translateY(-70px);
+}
+
+
+.hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .hover-text:hover {
+    position: absolute;
+    opacity: 1;
+  }
+
+  .imgButton{
+    transition: opacity 0.5s ease;
+}
+
+  .imgButton:hover{
+    transform: rotate(360deg);
+  }

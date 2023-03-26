@@ -1,2 +1,7 @@
 h1 {color: rgb(118, 32, 239); align-content: center;}
 h2 {color: rgb(32, 239, 149);}
+
+.navbar-custom {
+    background-color:#e3f2fd;
+}
+
