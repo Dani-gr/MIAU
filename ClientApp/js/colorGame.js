@@ -3,31 +3,44 @@ const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
 const colorDisplay = document.getElementById("color-display");
 
-//TO-DO: Agregar varios colores, y aleatorización de los mismos
+// TO-DO: Agregar varios colores, y aleatorización de los mismos
 
-// inicializar variables
+// Inicializar variables
 const color = "blue";
 const letters = ["b", "u", "i", "x", "e", "l"];
 colorDisplay.style.backgroundColor = "#2408f3";
 
-// agregar letras al contenedor de letras
+// Agregar letras al contenedor de letras
 for (let i = 0; i < letters.length; i++) {
     const letter = document.createElement("div");
     letter.setAttribute("class", "letter");
+    letter.setAttribute("draggable", "true");
     letter.innerHTML = letters[i].toUpperCase();
+    letter.id = "letter-" + i;
     lettersDiv.append(letter);
 }
 
+// Establecer los tamaños según el número de letras
 lettersDiv.style.width = 50 * letters.length + 20 + "px";
 answerDiv.style.width = 50 * color.length + 20 + "px";
 
-// hacer que todas las letras sean arrastrables
-const allLetters = document.querySelectorAll('.letter');
-for (let i = 0; i < allLetters.length; i++) {
-    allLetters[i].addEventListener("dragstart", function(e){
-        e.dataTransfer.setData('text', this.id);
-    });
+// Crear los espacios para la respuesta
+for (let i = 0; i < color.length; i++) {
+	const answerSpace = document.createElement("div");
+	answerSpace.className = "answer-space";
+	answerSpace.id = "answer-space-" + i;
+	answerDiv.appendChild(answerSpace);
 }
+
+// Hacer que todas las letras sean arrastrables
+document.querySelectorAll('.letter').forEach(
+    function(value) {
+        value.addEventListener('dragstart', function(e){
+            e.dataTransfer.setData('text', this.id);
+        });
+    }
+);
+
 
 document.addEventListener('dragover', function(e) {
 	e.preventDefault();
@@ -35,29 +48,43 @@ document.addEventListener('dragover', function(e) {
 
 document.addEventListener('drop', function(e) {
 	e.preventDefault();
-	var data = e.dataTransfer.getData('text');
-	var droppedElement = document.getElementById(data);
+	const data = e.dataTransfer.getData('text');
+	const droppedLetter = document.getElementById(data);
 
-	// Si la letra arrastrada es la primera letra del nombre del color, la soltamos en el contenedor
-	if (droppedElement.innerHTML.toUpperCase() == colorNameElement.innerHTML.charAt(0).toUpperCase()) {
-		document.getElementById("letter-container").removeChild(droppedElement);
-		colorNameElement.innerHTML = colorNameElement.innerHTML.substr(1);
+	// Obtener el elemento donde se soltó la letra
+	const space = e.target;
+    
+    if (space.getAttribute("class") === "answer-space") {
+        // Mover la letra al espacio de respuesta correspondiente
+        droppedLetter.parentNode.removeChild(droppedLetter);
+	    space.appendChild(droppedLetter);
+    } else if (droppedLetter.parentNode !== lettersDiv && (space.getAttribute("class") !== "letter" || space.parentNode === lettersDiv)) {
+        // Quitar la letra y devolverla 
+        droppedLetter.parentNode.removeChild(droppedLetter);
+	    lettersDiv.appendChild(droppedLetter);
+    } else return;
 
-		// Si se ha completado el nombre del color, cambiar el fondo del contenedor al color correcto
-		if (colorNameElement.innerHTML.length == 0) {
-			document.getElementById("game-container").style.backgroundColor = "#00ff15";
-		}
-	}
+    // Según el número de letras colocadas, se activa o no el botón
+    let n = 0;
+    for (let i = 0; i < answerDiv.childElementCount; i++)
+        if(answerDiv.children[i].childElementCount === 1) ++n;
+    verifyButton.toggleAttribute("disabled", n !== color.length);
 });
 
 // verificar si el nombre del color es correcto
 verifyButton.addEventListener("click", function(){
-    const word = "";
-    document.querySelectorAll("#answer .letra").each(function() {
-        word += $(this).text();
+    let word = "";
+    const spaces = document.querySelectorAll(".answer-space");
+    spaces.forEach(function(value) {
+        word += value.firstChild.innerHTML;
     });
-    if (word == color) {
+    if (word.toUpperCase() === color.toUpperCase()) {
+        answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
         //TO-DO: poner otro color
-    } else alert("La respuesta no es correcta :(")
+    } else { 
+        answerDiv.style.backgroundColor = "red";
+        alert("La respuesta no es correcta :(" +
+            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + color.toUpperCase() + "\"");
+    }
 });
