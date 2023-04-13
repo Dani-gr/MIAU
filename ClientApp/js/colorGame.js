@@ -43,14 +43,14 @@ startGame = function() {
 
     // Establecer los tamaños según el número de letras
     lettersDiv.style.width = 50 * letters.length + 20 + "px";
-    answerDiv.style.width = 50 * number.length + 20 + "px";
+    answerDiv.style.width = 50 * color.length + 20 + "px";
 
     // Eliminar los espacios anteriores
     for (let i = answerDiv.childElementCount - 1; i >= 0; i--)
         answerDiv.children[i].remove();
     
     // Crear los espacios para la respuesta
-    for (let i = 0; i < number.length; i++) {
+    for (let i = 0; i < color.length; i++) {
         const answerSpace = document.createElement("div");
         answerSpace.className = "answer-space";
         answerSpace.id = "answer-space-" + i;
@@ -92,7 +92,7 @@ document.addEventListener('drop', function(e) {
     let n = 0;
     for (let i = 0; i < answerDiv.childElementCount; i++)
         if(answerDiv.children[i].childElementCount === 1) ++n;
-    verifyButton.toggleAttribute("disabled", n !== number.length);
+    verifyButton.toggleAttribute("disabled", n !== color.length);
 });
 
 // Verificar si el nombre del color es correcto
@@ -103,7 +103,7 @@ verifyButton.addEventListener("click", function(){
         word += value.firstChild.innerHTML;
     });
 
-    if (word.toUpperCase() === number.toUpperCase()) {
+    if (word.toUpperCase() === color.toUpperCase()) {
         answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
         startGame();
@@ -111,7 +111,7 @@ verifyButton.addEventListener("click", function(){
     } else { 
         answerDiv.style.backgroundColor = "red";
         alert("La respuesta no es correcta :(" +
-            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + number.toUpperCase() + "\"");
+            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + color.toUpperCase() + "\"");
         //startGame(); si no queremos que corrija
     }
 });
