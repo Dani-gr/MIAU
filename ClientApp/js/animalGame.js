@@ -3,16 +3,11 @@ const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
 const colorDisplay = document.getElementById("color-display");
 
-const colors = [
-	"red",
-	"orange",
-	"yellow",
-	"green",
-	"aqua",
-	"blue",
-    "purple"
+const animals = [
+       "sheep", "lion", "dog", "elephant", "shark",
 ]
-let color;
+
+let animal;
 let letters;
 
 startGame = function() {
@@ -22,9 +17,25 @@ startGame = function() {
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
+     if(animal === "sheep"){
+         document.getElementById("myPicture").src="resources/animals/sheep.png";
+     }
+     else if (animal === "lion"){
+        document.getElementById("myPicture").src="resources/animals/lion.png";
+     }
+     else if (animal === "dog"){
+        document.getElementById("myPicture").src="resources/animals/dog.png";
+     }
+     else if (animal === "elephant"){
+        document.getElementById("myPicture").src="resources/animals/elephant.png";
+     }
+     else if (animal === "shark"){
+        document.getElementById("myPicture").src="resources/animals/shark.png";
+     }
+
     letters.sort(function() {return Math.random() - 0.5;});
 
-    colorDisplay.style.backgroundColor = animal;
+    //animalDisplay.style.backgroundColor = animal;
     answerDiv.style.backgroundColor = "#fff";
 
     // Eliminar las letras anteriores
