@@ -1,0 +1,67 @@
+@import url("./commonStyles.css");
+
+h1 {
+    color: rgb(51, 165, 171);
+    text-align: center;
+}
+
+#PaletaDiv {
+    height: 700px;
+    width: 700px;
+    background-image: url("../resources/PaletaEstudio.png");
+    background-size: cover;
+}
+
+.hover-text {
+    text-align: center;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 25px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.hover-text:hover {
+    opacity: 1;
+}
+
+#green {
+    top: 220px;
+    right: 199px;
+}
+
+#red {
+    bottom: 41px;
+    right: 31px;
+    padding-left: 47px;
+    padding-right: 47px;
+}
+
+#blue {
+    color: aliceblue;
+    bottom: 87px;
+    left: 194px;
+    padding-left: 34px;
+    padding-right: 35px;
+}
+
+#yellow {
+    top: 7px;
+    left: 194px;
+    padding-top: 27px;
+    padding-left: 8px;
+    padding-right: 7px;
+}
+
+#white {
+    top: 7px;
+    left: 26px;
+    padding: 18px;
+    padding-top: 20px;
+    padding-bottom: 21px;
+    padding-right: 18px;
+}

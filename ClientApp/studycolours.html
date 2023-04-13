@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>MIAU</title>
-        <style type="text/css">
-            @import url("styles/commonStyles.css");
 
-            h1{
-                color: rgb(51, 165, 171);
-                text-align: center;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>MIAU</title>
+    <style type="text/css">
+        @import url("./styles/studyColors.css");
+    </style>
+    <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
 
-            #Paleta{
-                margin-left: 200px;
-                height: 500px;
-            }
-
-        </style>
-        <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    </head>
-    <body style="background-color: rgb(243, 229, 167);">
-        <!-- To do by Carlos -->
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="col-1">
-                <button class="btn btn-primary" onclick="window.location.href = 'studymode.html';"
+<body style="background-color: rgb(243, 229, 167);">
+    <!-- To do by Carlos -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="col-1">
+            <button class="btn btn-primary" onclick="window.location.href = 'studymode.html';"
                 style="background: transparent;">
-                    <img src="resources/arrow.png" alt="ReturnArrow">
-                </button>
-            </div>
-        </nav>
+                <img src="resources/arrow.png" alt="ReturnArrow" />
+            </button>
+        </div>
+    </nav>
 
-        <h1>APRENDE LOS COLORES EN INGLÉS</h1>
-        
-        <img id="Paleta" src = "resources/PaletaEstudio.png">
+    <h1>¡Aprende los colores en inglés!</h1>
+    <div id="PaletaDiv" class="mx-auto d-block">
+        <h3 id="green" class="hover-text">Verde<br />Green<br /></h3>
+        <h3 id="red" class="hover-text">Rojo<br />Red<br /></h3>
+        <h3 id="blue" class="hover-text">Azul<br />Blue<br /></h3>
+        <h3 id="yellow" class="hover-text">Amarillo<br />Yellow<br /></h3>
+        <h3 id="white" class="hover-text">Blanco<br />White<br /></h3>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
