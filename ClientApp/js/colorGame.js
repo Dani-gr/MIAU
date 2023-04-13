@@ -17,14 +17,14 @@ let letters;
 
 startGame = function() {
     // Seleccionar el color y las letras
-    number = numbers[Math.floor(Math.random() * numbers.length)];
-    letters = number.split("");
+    color = colors[Math.floor(Math.random() * colors.length)];
+    letters = color.split("");
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
     letters.sort(function() {return Math.random() - 0.5;});
 
-    colorDisplay.style.backgroundColor = number;
+    colorDisplay.style.backgroundColor = color;
     answerDiv.style.backgroundColor = "#fff";
 
     // Eliminar las letras anteriores
