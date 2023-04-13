@@ -3,33 +3,33 @@ const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
 const colorDisplay = document.getElementById("color-display");
 
-const animals = [
+const numbers = [
        "sheep", "lion", "dog", "elephant", "shark",
 ]
 
-let animal;
+let number;
 let letters;
 
 startGame = function() {
     // Seleccionar el color y las letras
-    animal = animals[Math.floor(Math.random() * animals.length)];
-    letters = animal.split("");
+    number = numbers[Math.floor(Math.random() * numbers.length)];
+    letters = number.split("");
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
-     if(animal === "sheep"){
+     if(number === "sheep"){
          document.getElementById("myPicture").src="resources/animals/sheep.png";
      }
-     else if (animal === "lion"){
+     else if (number === "lion"){
         document.getElementById("myPicture").src="resources/animals/lion.png";
      }
-     else if (animal === "dog"){
+     else if (number === "dog"){
         document.getElementById("myPicture").src="resources/animals/dog.png";
      }
-     else if (animal === "elephant"){
+     else if (number === "elephant"){
         document.getElementById("myPicture").src="resources/animals/elephant.png";
      }
-     else if (animal === "shark"){
+     else if (number === "shark"){
         document.getElementById("myPicture").src="resources/animals/shark.png";
      }
 
@@ -54,14 +54,14 @@ startGame = function() {
 
     // Establecer los tamaños según el número de letras
     lettersDiv.style.width = 50 * letters.length + 20 + "px";
-    answerDiv.style.width = 50 * animal.length + 20 + "px";
+    answerDiv.style.width = 50 * number.length + 20 + "px";
 
     // Eliminar los espacios anteriores
     for (let i = answerDiv.childElementCount - 1; i >= 0; i--)
         answerDiv.children[i].remove();
     
     // Crear los espacios para la respuesta
-    for (let i = 0; i < animal.length; i++) {
+    for (let i = 0; i < number.length; i++) {
         const answerSpace = document.createElement("div");
         answerSpace.className = "answer-space";
         answerSpace.id = "answer-space-" + i;
@@ -103,7 +103,7 @@ document.addEventListener('drop', function(e) {
     let n = 0;
     for (let i = 0; i < answerDiv.childElementCount; i++)
         if(answerDiv.children[i].childElementCount === 1) ++n;
-    verifyButton.toggleAttribute("disabled", n !== animal.length);
+    verifyButton.toggleAttribute("disabled", n !== number.length);
 });
 
 // Verificar si el nombre del color es correcto
@@ -114,7 +114,7 @@ verifyButton.addEventListener("click", function(){
         word += value.firstChild.innerHTML;
     });
 
-    if (word.toUpperCase() === animal.toUpperCase()) {
+    if (word.toUpperCase() === number.toUpperCase()) {
         answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
         startGame();
@@ -122,7 +122,7 @@ verifyButton.addEventListener("click", function(){
     } else { 
         answerDiv.style.backgroundColor = "red";
         alert("La respuesta no es correcta :(" +
-            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + animal.toUpperCase() + "\"");
+            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + number.toUpperCase() + "\"");
         //startGame(); si no queremos que corrija
     }
 });

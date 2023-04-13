@@ -1,18 +1,18 @@
 const verifyButton = document.getElementById("verify");
 const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
-const colorDisplay = document.getElementById("color-display");
+const numberDisplay = document.getElementById("number-display");
 
-const colors = [
-	"red",
-	"orange",
-	"yellow",
-	"green",
-	"aqua",
-	"blue",
-    "purple"
+const numbers = [
+	"one",
+	"ten",
+	"four",
+	"three",
+	"five",
+	"two",
+    "six"
 ]
-let color;
+let number;
 let letters;
 
 startGame = function() {
@@ -24,7 +24,27 @@ startGame = function() {
 
     letters.sort(function() {return Math.random() - 0.5;});
 
-    colorDisplay.style.backgroundColor = number;
+    if(number === "one"){
+        document.getElementById("myPicture").src="resources/numbers/1.png";
+    }
+    else if (number === "ten"){
+        document.getElementById("myPicture").src="resources/numbers/10.png";
+    }
+    else if (number === "four"){
+        document.getElementById("myPicture").src="resources/numbers/4.png";
+    }
+    else if (number === "three"){
+        document.getElementById("myPicture").src="resources/numbers/3.png";
+    }
+    else if (number === "five"){
+        document.getElementById("myPicture").src="resources/numbers/5.png";
+    }
+    else if (number === "two"){
+        document.getElementById("myPicture").src="resources/numbers/2.png";
+     }
+     else if (number === "six"){
+        document.getElementById("myPicture").src="resources/numbers/6.png";
+     }
     answerDiv.style.backgroundColor = "#fff";
 
     // Eliminar las letras anteriores
