@@ -1,3 +1,5 @@
+@import url("styles/commonStyles.css");
+
 * {
     background: #FFF8BB;
     font-size: xx-large;
@@ -14,7 +16,7 @@ fieldset#cuadrito1 {
     border-radius: 30px;
 }
 
-fieldset#cuadrito1 p{
+fieldset#cuadrito1 p {
     background: #E3A7FF;
     margin-top: 0%;
 }
