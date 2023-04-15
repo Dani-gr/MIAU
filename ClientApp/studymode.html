@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-    
-    <head>
-        <title>MIAU</title>
-        <meta charset="utf-8">
-        <style>
-            @import url("styles/commonStyles.css");
-            #button-cont button{
-                background-color: #85d8e8;
-                height: 130px;
-                width: 550px;
 
-                font-size: 40px;
-                font-weight: 400;
-                line-height: 50px;
-                letter-spacing: 0em;
-                text-align: center;
-            }
-        </style>
-        <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    </head>
-    
-    <body style="background-color: rgb(243, 229, 167);">
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="col-1">
-                <button class="btn btn-primary" onclick="window.location.href = 'mainmenu.html';"
-                style="background: transparent;">
-                    <img src="resources/arrow.png" alt="ReturnArrow">
+<head>
+    <title>MIAU</title>
+    <meta charset="utf-8">
+    <style>
+        @import url("styles/commonStyles.css");
+
+        #button-cont button {
+            background-color: #85d8e8;
+            height: 130px;
+            width: 550px;
+
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 50px;
+            letter-spacing: 0em;
+            text-align: center;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgb(243, 229, 167);">
+    <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a href="mainmenu.html">
+                <button type="button"><img src="./resources/arrow.png" style="width: 100%;"></button>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 80px">
+        <br>
+
+        <div id="button-cont" class="float-left">
+            <div>
+                <button class="btn btn-primary btn-lg" onclick="window.location.href = 'studycolours.html';">
+                    <img src="resources/botonColores.png" alt="Colores" class="mr-3" width="100">
+                    COLORES - COLOURS
                 </button>
             </div>
-        </nav>
 
-        <div class="container">
             <br>
 
-            <div id="button-cont" class = "float-left">
-                <div>
-                    <button class="btn btn-primary btn-lg" onclick="window.location.href = 'studycolours.html';">
-                        <img src="resources/botonColores.png" alt="Imagen del botón" class="mr-3" width="100">
-                        COLORES - COLOURS
-                    </button>
-                </div>
-
-                <br>
-
-                <div>
-                    <button class="btn btn-primary btn-lg" onclick="window.location.href = 'studyactivity.html';">
-                        <img src="resources/botonOrange.png" alt="Imagen del botón" class="mr-3" width="100">
-                        FRUTAS - FRUITS
-                    </button>
-                </div>
-
-                <br>
-
-                <div>
-                    <button class="btn btn-primary btn-lg" onclick="window.location.href = 'studyactivity.html';">
-                        CATEGORÍA EN PROCESO - WORK IN PROGRESS
-                    </button>
-                </div>
-                
+            <div>
+                <button class="btn btn-primary btn-lg" onclick="window.location.href = 'studyanimals.html';">
+                    <img src="resources/botonAnimales.png" alt="Animales" class="mr-3" width="100">
+                    ANIMALES - ANIMALS
+                </button>
             </div>
 
-            <div class = "float-right">
-                <img>
+            <br>
+
+            <div>
+                <button class="btn btn-primary btn-lg" onclick="window.location.href = 'studyactivity.html';">
+                    CATEGORÍA EN PROCESO - WORK IN PROGRESS
+                </button>
             </div>
 
         </div>
-       
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    </body>
+
+        <div class="float-right">
+            <img>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
 
 </html>

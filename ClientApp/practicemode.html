@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>MIAU</title>
-        <style type="text/css">
-            @import url("styles/commonStyles.css");
-            @import url("styles/practicemodeStyles.css");
-        </style>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    </head>
-    <body style="overflow: hidden;">
-        <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
-            <div class="container-fluid">
-                <a href="mainmenu.html">
-                    <button style="background: transparent; outline: none; border: 0; width: 60px;"type="button"><img src="./resources/arrow.png" style="width: 100%;"></button>
-                </a>
-            </div>
-        </nav>
-        <h1 style="position: absolute;
+
+<head>
+    <meta charset="UTF-8">
+    <title>MIAU</title>
+    <style type="text/css">
+        @import url("styles/commonStyles.css");
+        @import url("styles/practicemodeStyles.css");
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body style="overflow: hidden;">
+    <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a href="mainmenu.html">
+                <button type="button"><img src="./resources/arrow.png" style="width: 100%;"></button>
+            </a>
+        </div>
+    </nav>
+    <h1 style="position: absolute;
         top: 100px;
         left: 50px;
         border:3px solid #ff8dd7;
@@ -26,50 +29,75 @@
         padding:15px; 
         border-radius:10px; 
         z-index: 1;">Modo práctica</h1>
-        <a href="practiceactivity.html">
-            <button class="myButton " style="background: transparent; outline: none; border: 0; position: absolute; top: 250px; left: 50px; z-index: 1; width: 200px; height: 200px;">
-                <img src="./resources/botonColores.png" class="imgButton" style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
-                <h2 class="hover-text" style="position: absolute; color: black; font-size: medium; top: 70px; left: 59px; z-index: 3; background-color: rgba(255, 173, 214, 0.7); padding:15px; border-radius:10px;">The colors</br>Los colores</h2>
-            </button> 
-        </a>        
-        <button class="myButton " style="background: transparent; outline: none; border: 0; position: absolute; bottom: 125px; left: 380px; z-index: 1; width: 190px; height: 190px;">
-            <img  src="./resources/botonAnimales.png" class="imgButton" style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
-        </button>   
-        <button class="myButton " style="background: transparent; outline: none; border: 0; position: absolute; top: 250px; left: 710px; z-index: 1; width: 200px; height: 200px;">
-            <img src="./resources/botonNumeros.png" class="imgButton" style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
-        </button>  
-        <button class="myButton " style="background: transparent; outline: none; border: 0; position: absolute; bottom: 125px; right: 300px; z-index: 1; width: 200px; height: 200px;">
-            <img src="./resources/botonSoonMore.png" class="imgButton" style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
+    <a href="practiceactivity.html">
+        <button class="myButton "
+            style="background: transparent; outline: none; border: 0; position: absolute; top: 250px; left: 50px; z-index: 1; width: 200px; height: 200px;">
+            <img src="./resources/botonColores.png" class="imgButton"
+                style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
+            <h2 class="hover-text"
+                style="position: absolute; color: black; font-size: medium; top: 70px; left: 59px; z-index: 3; background-color: rgba(255, 173, 214, 0.7); padding:15px; border-radius:10px;">
+                The colors</br>Los colores</h2>
         </button>
-        <div>
-            <img src="./resources/images.png" style="position: absolute; top: 370px; left: 260px; z-index: 1; width: 30px; transform: rotate(130deg);">
-            <img src="./resources/images.png" style="position: absolute; top: 410px; left: 290px; z-index: 1; width: 30px; transform: rotate(120deg);">
-            <img src="./resources/images.png" style="position: absolute; top: 400px; left: 345px; z-index: 1; width: 30px; transform: rotate(125deg);">
-            <img src="./resources/images.png" style="position: absolute; top: 440px; left: 375px; z-index: 1; width: 30px; transform: rotate(130deg);">
-        </div>
-        <div>
-            <img src="./resources/images.png" style="position: absolute; bottom: 220px; left: 600px; z-index: 1; width: 30px; transform: rotate(20deg);">
-            <img src="./resources/images.png" style="position: absolute; bottom: 270px; left: 630px; z-index: 1; width: 30px; transform: rotate(30deg);">
-            <img src="./resources/images.png" style="position: absolute; bottom: 250px; left: 680px; z-index: 1; width: 30px; transform: rotate(25deg);">
-            <img src="./resources/images.png" style="position: absolute; bottom: 290px; left: 715px; z-index: 1; width: 30px; transform: rotate(30deg);">
-        </div>
-        <div style="position: absolute; margin-left: 650px;">
-            <img src="./resources/images.png" style="position: absolute; top: 370px; left: 260px; z-index: 1; width: 30px; transform: rotate(130deg);">
-            <img src="./resources/images.png" style="position: absolute; top: 410px; left: 290px; z-index: 1; width: 30px; transform: rotate(120deg);">
-            <img src="./resources/images.png" style="position: absolute; top: 400px; left: 345px; z-index: 1; width: 30px; transform: rotate(125deg);">
-            <img src="./resources/images.png" style="position: absolute; top: 440px; left: 375px; z-index: 1; width: 30px; transform: rotate(130deg);">
-        </div>
-        <div style="position: relative; left: 0; top: 0;">
-            <div class="bg-image d-flex align-items-center justify-content-center" >
-                <img src="./resources/solo-gatito.png" class="gato" style="position: absolute; bottom: -120px;
+    </a>
+    <button class="myButton "
+        style="background: transparent; outline: none; border: 0; position: absolute; bottom: 125px; left: 380px; z-index: 1; width: 190px; height: 190px;">
+        <img src="./resources/botonAnimales.png" class="imgButton"
+            style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
+    </button>
+    <button class="myButton "
+        style="background: transparent; outline: none; border: 0; position: absolute; top: 250px; left: 710px; z-index: 1; width: 200px; height: 200px;">
+        <img src="./resources/botonNumeros.png" class="imgButton"
+            style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
+    </button>
+    <button class="myButton "
+        style="background: transparent; outline: none; border: 0; position: absolute; bottom: 125px; right: 300px; z-index: 1; width: 200px; height: 200px;">
+        <img src="./resources/botonSoonMore.png" class="imgButton"
+            style="background-color: transparent; width: 110%; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));">
+    </button>
+    <div>
+        <img src="./resources/images.png"
+            style="position: absolute; top: 370px; left: 260px; z-index: 1; width: 30px; transform: rotate(130deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 410px; left: 290px; z-index: 1; width: 30px; transform: rotate(120deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 400px; left: 345px; z-index: 1; width: 30px; transform: rotate(125deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 440px; left: 375px; z-index: 1; width: 30px; transform: rotate(130deg);">
+    </div>
+    <div>
+        <img src="./resources/images.png"
+            style="position: absolute; bottom: 220px; left: 600px; z-index: 1; width: 30px; transform: rotate(20deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; bottom: 270px; left: 630px; z-index: 1; width: 30px; transform: rotate(30deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; bottom: 250px; left: 680px; z-index: 1; width: 30px; transform: rotate(25deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; bottom: 290px; left: 715px; z-index: 1; width: 30px; transform: rotate(30deg);">
+    </div>
+    <div style="position: absolute; margin-left: 650px;">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 370px; left: 260px; z-index: 1; width: 30px; transform: rotate(130deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 410px; left: 290px; z-index: 1; width: 30px; transform: rotate(120deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 400px; left: 345px; z-index: 1; width: 30px; transform: rotate(125deg);">
+        <img src="./resources/images.png"
+            style="position: absolute; top: 440px; left: 375px; z-index: 1; width: 30px; transform: rotate(130deg);">
+    </div>
+    <div style="position: relative; left: 0; top: 0;">
+        <div class="bg-image d-flex align-items-center justify-content-center">
+            <img src="./resources/solo-gatito.png" class="gato" style="position: absolute; bottom: -120px;
                 right: 0; margin: 20px; z-index: 1;" alt="logo">
-            </div>
-            <img src="./resources/pepoEspia.png" style="position: absolute; right: 80px; bottom: -10px; width: 30px;">
-            <div class="bg-image" 
-                style="background-image: url('./resources/Background.png'); height: 100vh;" style="position: relative; z-index: 0;">
-            </div>
         </div>
-           
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
+        <img src="./resources/pepoEspia.png" style="position: absolute; right: 80px; bottom: -10px; width: 30px;">
+        <div class="bg-image" style="background-image: url('./resources/Background.png'); height: 100vh;"
+            style="position: relative; z-index: 0;">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

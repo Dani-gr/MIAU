@@ -6,10 +6,6 @@ h1 {
     padding-top: 80px;
 }
 
-h4 {
-    text-align: center;
-}
-
 #PaletaDiv {
     height: 480px;
     width: 480px;
@@ -45,80 +41,41 @@ h4 {
     opacity: 1;
 }
 
-.green {
+#green {
     top: 145px;
     right: 143px;
     background-color: #009B51;
 }
 
-.purple {
-    top: 145px;
-    right: 143px;
-    background-color: #a103a3;
-}
-
-.red {
+#red {
     bottom: 70px;
     right: 22px;
     background-color: #FF473E;
 }
 
-.aqua {
-    bottom: 70px;
-    right: 22px;
-    background-color: aqua;
-}
-
-.blue {
+#blue {
     bottom: 120px;
     left: 120px;
     background-color: #0074A8;
 }
 
-.blue h3 {
+#blue h3 {
     color: aliceblue;
 }
 
-.black {
-    bottom: 120px;
-    left: 120px;
-    background-color: black;
-}
-
-.black h3 {
-    color: aliceblue;
-}
-
-.yellow {
+#yellow {
     bottom: 85px;
     left: 138px;
     background-color: #FFD469;
 }
 
-.yellow h3 {
+#yellow h3 {
     padding: 0px;
     padding-top: 10px;
 }
 
-.orange {
-    bottom: 85px;
-    left: 138px;
-    background-color: #fa8500;
-}
-
-.orange h3 {
-    padding: 0px;
-    padding-top: 10px;
-}
-
-.white {
+#white {
     bottom: 100px;
     left: 18.5px;
     background-color: #FFFFFF;
-}
-
-.gray {
-    bottom: 100px;
-    left: 18.5px;
-    background-color: rgb(137, 137, 137);
 }
