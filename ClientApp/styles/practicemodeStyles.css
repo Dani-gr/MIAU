@@ -1,54 +1,227 @@
-@import url("./commonStyles.css");
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
 
-button:focus {
-  outline: none;
+/* Para navegadores webkit */
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-.gato {
-  transition: transform 0.5s ease;
+::-webkit-scrollbar-track {
+  background: #fff;
 }
 
-.gato:hover {
-  transform: translateY(-70px);
+::-webkit-scrollbar-thumb {
+  background-color: #ff69b4;
+  border-radius: 10px;
 }
 
-.hover-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+html {
+  scrollbar-color: #ffa3d1 #fff;
+  scrollbar-base-color: #ff8dd7;
 }
 
-.hover-text:hover {
-  position: absolute;
-  opacity: 1;
-}
-
-.imgButton {
-  transition: opacity 0.5s ease;
-}
-
-.imgButton:hover {
-  transform: rotate(360deg);
-}
-
-a.fill-div {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
+body {
+  background-image: url('/resources/Background.png');
+  background-attachment: fixed;
+  z-index: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+  scrollbar-color: #ffa3d1 #fff;
+  scrollbar-base-color: #ff8dd7;
 }
 
 h1 {
   position: absolute;
   top: 100px;
-  left: 50px;
+  left: 50%; /* Centra el elemento horizontalmente en su contenedor */
+  transform: translateX(-50%); /* Mueve el elemento hacia la izquierda en la mitad de su ancho */
+  align-items: center;
   border: 3px solid #ff8dd7;
   color: rgb(255, 255, 255);
   background-color: rgb(255, 173, 214);
   padding: 15px;
   border-radius: 10px;
   z-index: 1;
-
 }
+
+  
+ header p{
+   text-align: center;
+   margin-bottom: 0;
+ }
+
+ table {
+  background-image: url("/resources/fondo-cesped-hd.jpg");
+  background-size: cover;
+  width: 80%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+  padding-top: 30%;
+  margin-top: 80px; /* agrega margen superior */
+  overflow-y: scroll;
+}
+
+
+
+table tr {
+  height: 100px;
+}
+
+td {
+  width: 150px; /* ancho fijo */
+  height: 150px; /* altura fija */
+}
+
+td.filamentira {
+  height: auto;
+}
+
+
+td img.flecha-drc {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90%;
+  transform: rotate(-90deg) scaleX(-1);
+  margin-top: 40px;
+  margin-left: 2%;
+}
+
+td img.flecha-izq {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90%;
+  transform: rotate(-270deg);
+  margin-left: 75%;
+  margin-top: 10%;
+}
+
+.button1 {
+  background-color: #ef97ff;
+  border: 3px solid #f1c5ff;
+  height: 100%;
+  width: 100%;
+  margin: 0 10px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.button1 p, .button3 p {
+  margin-top: 10px;
+  width: 60%;
+  font-size: xx-large;
+  padding-left: 20px;
+}
+
+.button1, .button2, .button3 {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+}
+
+.button2 {
+  background-color: #a5d7df;
+  border: 3px solid #79a6ff;
+  height: 100%;
+  width: 100%;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.button2 p{
+  margin-top: 10px;
+  width: 60%;
+  font-size: xx-large;
+  padding-right: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button4 p {
+  width: 60%;
+  font-size: xx-large;
+  white-space: nowrap;
+}
+
+.button2 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.button3 {
+  background-color: #ffc46d;
+  border: 3px solid #ffaf2d;
+  height: 100%;
+  width: 100%;
+  margin: 0 10px;
+  border-radius: 20px;
+  display: flex;
+  
+  
+}
+
+.button4 {
+  background-color: #81ffb9;
+  border: 3px solid #009863;
+  height: 100%;
+  width: 100%;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+.gatito {
+  position: fixed;
+  bottom: -10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+.bubble {
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  z-index: 9999;
+  width: 25%;
+  min-width: 25%;
+  height: 15%;
+}
+
+.bubble img {
+  max-width: 90%; /* ajusta el valor para cambiar el tamaño de la imagen */
+  min-height: 90%;
+}
+
+
+
+.salta {
+  animation: salta 1s linear infinite;
+}
+
+
+@keyframes salta {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-20px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+button.no-style {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
