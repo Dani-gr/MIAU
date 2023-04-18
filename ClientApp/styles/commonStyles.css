@@ -21,3 +21,13 @@ h4 {
     border: 0;
     width: 60px;
 }
+
+.progress {
+    width: 600px;
+    margin: auto;
+}
+
+.bg-image {
+    background-image: url('../resources/Background.png');
+    height: 100vh;
+}
