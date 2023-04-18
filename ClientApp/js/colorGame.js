@@ -2,8 +2,9 @@ const verifyButton = document.getElementById("verify");
 const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
 const colorDisplay = document.getElementById("color-display");
+const progressBar = document.getElementById("progress-bar");
 
-const colors = [
+const numbers = [
     "red",
     "orange",
     "yellow",
@@ -14,10 +15,19 @@ const colors = [
 ]
 let color;
 let letters;
+let num = 0;
+numbers.sort(function () { return Math.random() - 0.5; });
+progressBar.setAttribute("aria-valuemax", numbers.length);
 
 startGame = function () {
+    progressBar.setAttribute("aria-valuenow", num);
+    progressBar.style.width = (num / numbers.length * 100).toFixed(2) + "%";
+
     // Seleccionar el color y las letras
-    color = colors[Math.floor(Math.random() * colors.length)];
+    if (num >= numbers.length) return;
+    color = numbers[num];
+
+
     letters = color.split("");
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
@@ -106,13 +116,17 @@ verifyButton.addEventListener("click", function () {
     if (word.toUpperCase() === color.toUpperCase()) {
         answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
+        num++;
+        progressBar.setAttribute("aria-valuenow", num);
+        verifyButton.toggleAttribute("disabled", true);
+        if (num >= numbers.length)
+            alert("¡Práctica terminada! :D");
+
         startGame();
-        // Quizá añadir un botón intermedio para darle control al usuario
     } else {
         answerDiv.style.backgroundColor = "red";
         alert("La respuesta no es correcta :(" +
             "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + color.toUpperCase() + "\"");
-        //startGame(); si no queremos que corrija
     }
 });
 

@@ -1,59 +1,30 @@
 const verifyButton = document.getElementById("verify");
 const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
-const numberDisplay = document.getElementById("number-display");
-const progressBar = document.getElementById("progress-bar");
+const colorDisplay = document.getElementById("color-display");
 
-const numbers = [
-    "one",
-    "ten",
-    "four",
-    "three",
-    "five",
-    "two",
-    "six"
+const colors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "aqua",
+    "blue",
+    "purple"
 ]
-let number;
+let color;
 let letters;
-let num = 0;
-numbers.sort(function () { return Math.random() - 0.5; });
-progressBar.setAttribute("aria-valuemax", numbers.length);
 
 startGame = function () {
-    progressBar.setAttribute("aria-valuenow", num);
-    progressBar.style.width = (num / numbers.length * 100).toFixed(2) + "%";
-
     // Seleccionar el color y las letras
-    if (num >= numbers.length) return;
-    number = numbers[num];
-
-    letters = number.split("");
+    color = colors[Math.floor(Math.random() * colors.length)];
+    letters = color.split("");
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
     letters.sort(function () { return Math.random() - 0.5; });
 
-    if (number === "one")
-        document.getElementById("myPicture").src = "resources/numbers/1.png";
-
-    else if (number === "ten")
-        document.getElementById("myPicture").src = "resources/numbers/10.png";
-
-    else if (number === "four")
-        document.getElementById("myPicture").src = "resources/numbers/4.png";
-
-    else if (number === "three")
-        document.getElementById("myPicture").src = "resources/numbers/3.png";
-
-    else if (number === "five")
-        document.getElementById("myPicture").src = "resources/numbers/5.png";
-
-    else if (number === "two")
-        document.getElementById("myPicture").src = "resources/numbers/2.png";
-
-    else if (number === "six")
-        document.getElementById("myPicture").src = "resources/numbers/6.png";
-
+    colorDisplay.style.backgroundColor = color;
     answerDiv.style.backgroundColor = "#fff";
 
     // Eliminar las letras anteriores
@@ -72,14 +43,14 @@ startGame = function () {
 
     // Establecer los tamaños según el número de letras
     lettersDiv.style.width = 50 * letters.length + 20 + "px";
-    answerDiv.style.width = 50 * number.length + 20 + "px";
+    answerDiv.style.width = 50 * color.length + 20 + "px";
 
     // Eliminar los espacios anteriores
     for (let i = answerDiv.childElementCount - 1; i >= 0; i--)
         answerDiv.children[i].remove();
 
     // Crear los espacios para la respuesta
-    for (let i = 0; i < number.length; i++) {
+    for (let i = 0; i < color.length; i++) {
         const answerSpace = document.createElement("div");
         answerSpace.className = "answer-space";
         answerSpace.id = "answer-space-" + i;
@@ -121,7 +92,7 @@ document.addEventListener('drop', function (e) {
     let n = 0;
     for (let i = 0; i < answerDiv.childElementCount; i++)
         if (answerDiv.children[i].childElementCount === 1) ++n;
-    verifyButton.toggleAttribute("disabled", n !== number.length);
+    verifyButton.toggleAttribute("disabled", n !== color.length);
 });
 
 // Verificar si el nombre del color es correcto
@@ -132,20 +103,16 @@ verifyButton.addEventListener("click", function () {
         word += value.firstChild.innerHTML;
     });
 
-    if (word.toUpperCase() === number.toUpperCase()) {
+    if (word.toUpperCase() === color.toUpperCase()) {
         answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
-        num++;
-        progressBar.setAttribute("aria-valuenow", num);
-        verifyButton.toggleAttribute("disabled", true);
-        if (num >= numbers.length)
-            alert("¡Práctica terminada! :D");
-
         startGame();
+        // Quizá añadir un botón intermedio para darle control al usuario
     } else {
         answerDiv.style.backgroundColor = "red";
         alert("La respuesta no es correcta :(" +
-            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + number.toUpperCase() + "\"");
+            "\nHas escrito: \"" + word.toUpperCase() + "\" y debía ser \"" + color.toUpperCase() + "\"");
+        //startGame(); si no queremos que corrija
     }
 });
 

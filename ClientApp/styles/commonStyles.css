@@ -104,3 +104,12 @@ body {
     100% { transform: translateY(0);}
   }
   
+.progress {
+    width: 600px;
+    margin: auto;
+}
+
+.bg-image {
+    background-image: url('../resources/Background.png');
+    height: 100vh;
+}
