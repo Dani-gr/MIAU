@@ -1,8 +1,10 @@
 @import url("./commonStyles.css");
+
 #game-container {
     width: 500px;
     margin: 0 auto;
     text-align: center;
+    padding-top: 80px;
 }
 
 #color-display {
@@ -13,24 +15,26 @@
 }
 
 #letters {
-	display: flex;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-	border: 1px solid black;
-	padding: 10px;
+    border: 1px solid black;
+    padding: 10px;
     margin-bottom: 10px;
-    height: 50px;
+    height: 60px;
     clear: both;
+    background-color: aliceblue;
 }
 
 #answer {
-	display: flex;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-	border: 1px solid black;
-	padding: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    padding-top: 5px;
     margin-bottom: 10px;
-    height: 50px;
+    height: 60px;
     clear: both;
 }
 
@@ -41,7 +45,6 @@
     border: 1px solid #333;
     border-radius: 5px;
     background-color: #eee;
-    margin: 5px;
     cursor: move;
     text-align: center;
     line-height: 40px;
