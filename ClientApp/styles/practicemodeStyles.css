@@ -19,15 +19,7 @@ html {
   scrollbar-base-color: #ff8dd7;
 }
 
-body {
-  background-image: url('/resources/Background.png');
-  background-attachment: fixed;
-  z-index: 0;
-  font-family: 'Raleway', sans-serif;
-  color: #333;
-  scrollbar-color: #ffa3d1 #fff;
-  scrollbar-base-color: #ff8dd7;
-}
+
 
 h1 {
   position: absolute;
@@ -50,7 +42,7 @@ h1 {
  }
 
  table {
-  background-image: url("/resources/fondo-cesped-hd.jpg");
+  background-image: url("/MIAU/ClientApp/resources/fondo-cesped-hd.jpg");
   background-size: cover;
   width: 80%;
   height: 100%;
@@ -177,33 +169,7 @@ td img.flecha-izq {
 
 
 
-.gatito {
-  position: fixed;
-  bottom: -10px;
-  left: 10px;
-  z-index: 9999;
-}
 
-.bubble {
-  position: fixed;
-  top: 50%;
-  left: 5%;
-  z-index: 9999;
-  width: 25%;
-  min-width: 25%;
-  height: 15%;
-}
-
-.bubble img {
-  max-width: 90%; /* ajusta el valor para cambiar el tamaño de la imagen */
-  min-height: 90%;
-}
-
-
-
-.salta {
-  animation: salta 1s linear infinite;
-}
 
 
 @keyframes salta {
