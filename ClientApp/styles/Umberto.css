@@ -1,0 +1,24 @@
+@import url("./commonStyles.css");
+
+h1 {
+    color: rgb(51, 165, 171);
+    text-align: center;
+    padding-top: 80px;
+}
+
+.card-img-top {
+    max-width: 130px;
+    margin: auto;
+}
+
+.col {
+    max-width: 160px;
+}
+
+.col #elementos {
+    max-width: fit-content;
+}
+
+.col #Umberto {
+    max-width: fit-content;
+}
