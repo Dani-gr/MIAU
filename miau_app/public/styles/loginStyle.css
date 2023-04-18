@@ -1,0 +1,60 @@
+@import url("styles/commonStyles.css");
+
+* {
+    background: #FFF8BB;
+    font-size: xx-large;
+}
+
+fieldset#cuadrito1 {
+    position: relative;
+    left: 620px;
+    top: 190px;
+    width: 230px;
+    height: 40px;
+
+    background: #E3A7FF;
+    border-radius: 30px;
+}
+
+fieldset#cuadrito1 p {
+    background: #E3A7FF;
+    margin-top: 0%;
+}
+
+fieldset#formnombre {
+    position: relative;
+    left: 531px;
+    top: 200px;
+    width: 300px;
+    height: 200px;
+    background: #C3F1FF;
+    border-radius: 30px;
+}
+
+fieldset#formnombre form {
+    background: #C3F1FF;
+}
+
+fieldset#formnombre p {
+    background: #C3F1FF;
+    margin-bottom: 10px;
+}
+
+fieldset#formnombre input {
+    background: #cefcf5;
+}
+
+fieldset#formnombre input#botoncico {
+    background: #cafff8;
+    border-color: rgb(34, 161, 161);
+    position: relative;
+    left: 130px;
+    top: 20px;
+    border-radius: 30px;
+}
+
+img {
+    position: absolute;
+    left: 1200px;
+    top: 500px;
+}
