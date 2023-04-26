@@ -1,7 +1,6 @@
 const verifyButton = document.getElementById("verify");
 const lettersDiv = document.getElementById("letters");
 const answerDiv = document.getElementById("answer");
-const colorDisplay = document.getElementById("color-display");
 const progressBar = document.getElementById("progress-bar");
 
 const animals = [
@@ -26,15 +25,15 @@ startGame = function () {
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
     if (animal === "sheep")
-        document.getElementById("myPicture").src = "resources/animals/sheep.png";
+        document.getElementById("animal-display").src = "resources/animals/sheep.png";
     else if (animal === "lion")
-        document.getElementById("myPicture").src = "resources/animals/lion.png";
+        document.getElementById("animal-display").src = "resources/animals/lion.png";
     else if (animal === "dog")
-        document.getElementById("myPicture").src = "resources/animals/dog.png";
+        document.getElementById("animal-display").src = "resources/animals/dog.png";
     else if (animal === "elephant")
-        document.getElementById("myPicture").src = "resources/animals/elephant.png";
+        document.getElementById("animal-display").src = "resources/animals/elephant.png";
     else if (animal === "shark")
-        document.getElementById("myPicture").src = "resources/animals/shark.png";
+        document.getElementById("animal-display").src = "resources/animals/shark.png";
 
     letters.sort(function () { return Math.random() - 0.5; });
 
