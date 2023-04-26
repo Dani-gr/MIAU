@@ -1,0 +1,10 @@
+.btn-primary{
+    background-color: rgb(255, 173, 214) !important;
+    border-color: rgb(255, 173, 214) !important;
+    font-size: 1.5rem !important;
+  }
+
+a{
+    color: rgb(118, 32, 239) !important;
+    font-weight: 500 !important;
+}
