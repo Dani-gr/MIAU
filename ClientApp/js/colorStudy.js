@@ -16,6 +16,17 @@ const colors2 = [
     ["Gris", "Gray"]
 ]
 
+const botonpamostrar = document.getElementsByClassName("paramostrarcolors")[0];
+
+function mostrarContenidoColor() {
+    document.getElementById("contenidocolors").style.display = "block";
+    botonpamostrar.style.display="none";
+}
+
+function mostrarBoton() {
+    botonpamostrar.style.display = "block";
+}
+
 button.onclick = function () {
     //console.log(colorDisplays);
     let colors = colors2;
@@ -40,3 +51,6 @@ button.onclick = function () {
         colorDisplay.innerHTML = colorName[0] + "<br/>" + colorName[1] + "<br/>";
     }
 }
+
+// Ejecutamos la función al cargar la página
+mostrarBoton();
