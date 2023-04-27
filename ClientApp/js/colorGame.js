@@ -88,6 +88,10 @@ document.addEventListener('drop', function (e) {
     // Obtener el elemento donde se soltó la letra
     const space = e.target;
 
+    move(space, droppedLetter);
+});
+
+move = function (space, droppedLetter) {
     if (space.getAttribute("class") === "answer-space") {
         // Mover la letra al espacio de respuesta correspondiente
         droppedLetter.parentNode.removeChild(droppedLetter);
@@ -103,7 +107,7 @@ document.addEventListener('drop', function (e) {
     for (let i = 0; i < answerDiv.childElementCount; i++)
         if (answerDiv.children[i].childElementCount === 1) ++n;
     verifyButton.toggleAttribute("disabled", n !== color.length);
-});
+}
 
 // Verificar si el nombre del color es correcto
 verifyButton.addEventListener("click", function () {
