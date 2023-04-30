@@ -30,7 +30,7 @@
     <div id="game-container">
         <h1>¿Cu&aacute;l es este color?</h1>
         <h2>Arrastra las letras al espacio que quieras, o hazles click para moverlas al primer espacio libre.</h2>
-        <div id="color-display" tabindex="0">
+        <div id="color-display" tabindex="0" aria-label="Pista">
 
         </div>
         <div id="answer" tabindex="0" aria-label="Respuesta">
@@ -38,7 +38,7 @@
         </div>
 
         <div id="letters" aria-label="Letras sin usar"></div>
-        <button id="verify" disabled="true">Verificar</button>
+        <button id="verify" disabled="true" aria-disabled="true">Verificar</button>
     </div>
 
 </body>

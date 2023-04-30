@@ -88,8 +88,10 @@ startGame = function () {
         return name;
     }
 
-    document.getElementById("number-display").src = searchResource(number);
-    document.getElementById("number-display").alt = translate(number);
+    const numberDisplay = document.getElementById("number-display");
+    numberDisplay.src = searchResource(number);
+    numberDisplay.alt = translate(number);
+    numberDisplay.setAttribute("aria-label", "Pista: " + translate(number));
 
     answerDiv.style.backgroundColor = "#fff";
 
@@ -104,6 +106,14 @@ startGame = function () {
         letter.setAttribute("draggable", "true");
         letter.innerHTML = letters[i].toUpperCase();
         letter.id = "letter-" + i;
+
+        const sr_button = document.createElement("button");
+        sr_button.setAttribute("class", "sr-only");
+        sr_button.setAttribute("tabIndex", "-1");
+        sr_button.setAttribute("aria-hidden", "true");
+        letter.setAttribute("tabIndex", i.toString());
+
+        letter.append(sr_button);
         lettersDiv.append(letter);
     }
 
@@ -136,6 +146,12 @@ startGame = function () {
             moveAuto(this);
         });
     });
+
+    // Añadir el index de la navegación por tabulador
+    verifyButton.setAttribute("tabIndex", letters.length);
+
+    // Añadir descripción de la caja de respuesta
+    answerDiv.setAttribute("aria-label", "Respuesta de " + number.length + " letras, vacía");
 }
 
 
@@ -184,8 +200,43 @@ move = function (space, droppedLetter) {
     // Según el número de letras colocadas, se activa o no el botón
     let n = 0;
     for (let i = 0; i < answerDiv.childElementCount; i++)
-        if (answerDiv.children[i].childElementCount === 1) ++n;
+        if (answerDiv.children[i].childElementCount === 1) {
+            // Actualizamos la navegación por tab de las letras colocadas
+            answerDiv.children[i].firstChild.setAttribute("tabIndex", n.toString());
+            ++n;
+        }
     verifyButton.toggleAttribute("disabled", n !== number.length);
+    verifyButton.toggleAttribute("aria-disabled", n !== number.length);
+
+    lettersDiv.setAttribute("tabIndex", (n).toString());
+    for (let i = 0; i < lettersDiv.childElementCount; i++) {
+        // Actualizamos la navegación por tab de las letras sin colocar
+        lettersDiv.children[i].setAttribute("tabIndex", (i + n).toString());
+    }
+
+    // Actualizar descripción de la caja de respuesta
+    let aria_label = "Respuesta de " + number.length + " letras, ";
+    aria_label = aria_label.concat(
+        number.length === 0 ?
+            "vacía" : (
+                (number.length - n) === 0 ?
+                    "completa" : (
+                        "falta" + ((number.length - n) === 1 ?
+                            " una" :
+                            "n " + (number.length - n)
+                        )
+                    )
+            ) + ". "
+    );
+    for (let i = 0; i < answerDiv.childElementCount; i++)
+        aria_label = aria_label.concat(
+            answerDiv.children[i].childElementCount === 1 ?
+                answerDiv.children[i].firstChild.innerText :
+                "hueco"
+            , "; "
+        );
+
+    answerDiv.setAttribute("aria-label", aria_label);
 }
 
 // Verificar si el nombre del número es correcto
@@ -202,6 +253,7 @@ verifyButton.addEventListener("click", function () {
         num++;
         progressBar.setAttribute("aria-valuenow", num);
         verifyButton.toggleAttribute("disabled", true);
+        verifyButton.toggleAttribute("aria-disabled", true);
         if (num >= numbers.length) {
             alert("¡Práctica terminada! :D");
             document.querySelectorAll('.letter').forEach(function (value) {

@@ -22,7 +22,7 @@
         <div class="col">
             <div class="progress">
                 <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                    role="progressbar" aria-label="Barra de progreso" aria-valuemin="0"></div>
+                    role="progressbar" aria-label="Barra de progreso" aria-valuemin="0" tabindex="0"></div>
             </div>
         </div>
         <div class="col-1"></div>
@@ -30,13 +30,14 @@
     <div id="game-container">
         <h1>¿C&oacute;mo se llama este n&uacute;mero?</h1>
         <h2>Arrastra las letras al espacio que quieras, o hazles click para moverlas al primer espacio libre.</h2>
-        <img src="resources/Umberto.png" width="205" height="auto" id="number-display" alt="A number">
-        <div id="answer">
+        <img src="resources/Umberto.png" width="205" height="auto" id="number-display" aria-label="Pista" alt="A number"
+            tabindex="0">
+        <div id="answer" tabindex="0" aria-label="Respuesta">
 
         </div>
 
-        <div id="letters"></div>
-        <button id="verify" disabled="true">Verificar</button>
+        <div id="letters" aria-label="Letras sin usar"></div>
+        <button id="verify" disabled="true" aria-disabled="true">Verificar</button>
     </div>
 </body>
 <script src="js/numberGame.js"></script>

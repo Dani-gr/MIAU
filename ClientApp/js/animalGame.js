@@ -17,7 +17,7 @@ startGame = function () {
     progressBar.setAttribute("aria-valuenow", num);
     progressBar.style.width = (num / animals.length * 100).toFixed(2) + "%";
 
-    // Seleccionar el color y las letras
+    // Seleccionar el animal y las letras
     if (num >= animals.length) return;
     animal = animals[num];
     letters = animal.split("");
@@ -68,8 +68,10 @@ startGame = function () {
         return name;
     }
 
-    document.getElementById("animal-display").src = searchResource(animal);
-    document.getElementById("animal-display").alt = translate(animal);
+    const animalDisplay = document.getElementById("animal-display");
+    animalDisplay.src = searchResource(animal);
+    animalDisplay.alt = translate(animal);
+    animalDisplay.setAttribute("aria-label", "Pista: " + translate(animal));
 
     letters.sort(function () { return Math.random() - 0.5; });
 
@@ -86,6 +88,14 @@ startGame = function () {
         letter.setAttribute("draggable", "true");
         letter.innerHTML = letters[i].toUpperCase();
         letter.id = "letter-" + i;
+
+        const sr_button = document.createElement("button");
+        sr_button.setAttribute("class", "sr-only");
+        sr_button.setAttribute("tabIndex", "-1");
+        sr_button.setAttribute("aria-hidden", "true");
+        letter.setAttribute("tabIndex", i.toString());
+
+        letter.append(sr_button);
         lettersDiv.append(letter);
     }
 
@@ -118,8 +128,13 @@ startGame = function () {
             moveAuto(this);
         });
     });
-}
 
+    // Añadir el index de la navegación por tabulador
+    verifyButton.setAttribute("tabIndex", letters.length);
+
+    // Añadir descripción de la caja de respuesta
+    answerDiv.setAttribute("aria-label", "Respuesta de " + animal.length + " letras, vacía");
+}
 
 document.addEventListener('dragover', function (e) {
     e.preventDefault();
@@ -166,11 +181,47 @@ move = function (space, droppedLetter) {
     // Según el número de letras colocadas, se activa o no el botón
     let n = 0;
     for (let i = 0; i < answerDiv.childElementCount; i++)
-        if (answerDiv.children[i].childElementCount === 1) ++n;
+        if (answerDiv.children[i].childElementCount === 1) {
+            // Actualizamos la navegación por tab de las letras colocadas
+            answerDiv.children[i].firstChild.setAttribute("tabIndex", n.toString());
+            ++n;
+        }
+
     verifyButton.toggleAttribute("disabled", n !== animal.length);
+    verifyButton.toggleAttribute("aria-disabled", n !== animal.length);
+
+    lettersDiv.setAttribute("tabIndex", (n).toString());
+    for (let i = 0; i < lettersDiv.childElementCount; i++) {
+        // Actualizamos la navegación por tab de las letras sin colocar
+        lettersDiv.children[i].setAttribute("tabIndex", (i + n).toString());
+    }
+
+    // Actualizar descripción de la caja de respuesta
+    let aria_label = "Respuesta de " + animal.length + " letras, ";
+    aria_label = aria_label.concat(
+        animal.length === 0 ?
+            "vacía" : (
+                (animal.length - n) === 0 ?
+                    "completa" : (
+                        "falta" + ((animal.length - n) === 1 ?
+                            " una" :
+                            "n " + (animal.length - n)
+                        )
+                    )
+            ) + ". "
+    );
+    for (let i = 0; i < answerDiv.childElementCount; i++)
+        aria_label = aria_label.concat(
+            answerDiv.children[i].childElementCount === 1 ?
+                answerDiv.children[i].firstChild.innerText :
+                "hueco"
+            , "; "
+        );
+
+    answerDiv.setAttribute("aria-label", aria_label);
 }
 
-// Verificar si el nombre del color es correcto
+// Verificar si el nombre del animal es correcto
 verifyButton.addEventListener("click", function () {
     let word = "";
     const spaces = document.querySelectorAll(".answer-space");
@@ -184,6 +235,7 @@ verifyButton.addEventListener("click", function () {
         num++;
         progressBar.setAttribute("aria-valuenow", num);
         verifyButton.toggleAttribute("disabled", true);
+        verifyButton.toggleAttribute("aria-disabled", true);
         if (num >= animals.length) {
             alert("¡Práctica terminada! :D");
             document.querySelectorAll('.letter').forEach(function (value) {

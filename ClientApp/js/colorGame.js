@@ -65,6 +65,7 @@ startGame = function () {
     }
     colorDisplay.innerText = translate(color);
     colorDisplay.style.color = color === "blue" || color === "purple" ? "aliceblue" : "black";
+    colorDisplay.setAttribute("aria-label", "Pista: " + colorDisplay.innerText)
 
 
     // Eliminar las letras anteriores
@@ -82,6 +83,7 @@ startGame = function () {
         const sr_button = document.createElement("button");
         sr_button.setAttribute("class", "sr-only");
         sr_button.setAttribute("tabIndex", "-1");
+        sr_button.setAttribute("aria-hidden", "true");
         letter.setAttribute("tabIndex", i.toString());
 
         letter.append(sr_button);
@@ -120,6 +122,9 @@ startGame = function () {
 
     // Añadir el index de la navegación por tabulador
     verifyButton.setAttribute("tabIndex", letters.length);
+
+    // Añadir descripción de la caja de respuesta
+    answerDiv.setAttribute("aria-label", "Respuesta de " + color.length + " letras, vacía");
 }
 
 document.addEventListener('dragover', function (e) {
@@ -173,13 +178,37 @@ move = function (space, droppedLetter) {
             ++n;
         }
     verifyButton.toggleAttribute("disabled", n !== color.length);
+    verifyButton.toggleAttribute("aria-disabled", n !== color.length);
 
     lettersDiv.setAttribute("tabIndex", (n).toString());
     for (let i = 0; i < lettersDiv.childElementCount; i++) {
         // Actualizamos la navegación por tab de las letras sin colocar
         lettersDiv.children[i].setAttribute("tabIndex", (i + n).toString());
-        ++n;
     }
+
+    // Actualizar descripción de la caja de respuesta
+    let aria_label = "Respuesta de " + color.length + " letras, ";
+    aria_label = aria_label.concat(
+        color.length === 0 ?
+            "vacía" : (
+                (color.length - n) === 0 ?
+                    "completa" : (
+                        "falta" + ((color.length - n) === 1 ?
+                            " una" :
+                            "n " + (color.length - n)
+                        )
+                    )
+            ) + ". "
+    );
+    for (let i = 0; i < answerDiv.childElementCount; i++)
+        aria_label = aria_label.concat(
+            answerDiv.children[i].childElementCount === 1 ?
+                answerDiv.children[i].firstChild.innerText :
+                "hueco"
+            , "; "
+        );
+
+    answerDiv.setAttribute("aria-label", aria_label);
 }
 
 // Verificar si el nombre del color es correcto
@@ -196,6 +225,7 @@ verifyButton.addEventListener("click", function () {
         num++;
         progressBar.setAttribute("aria-valuenow", num);
         verifyButton.toggleAttribute("disabled", true);
+        verifyButton.toggleAttribute("aria-disabled", true);
         if (num >= colors.length) {
             alert("¡Práctica terminada! :D");
             document.querySelectorAll('.letter').forEach(function (value) {
