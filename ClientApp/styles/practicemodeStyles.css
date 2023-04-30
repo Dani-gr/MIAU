@@ -20,157 +20,105 @@ html {
 }
 
 
-
 h1 {
-  position: absolute;
-  top: 100px;
-  left: 50%; /* Centra el elemento horizontalmente en su contenedor */
-  transform: translateX(-50%); /* Mueve el elemento hacia la izquierda en la mitad de su ancho */
-  align-items: center;
-  border: 3px solid #ff8dd7;
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 173, 214);
-  padding: 15px;
-  border-radius: 10px;
-  z-index: 1;
+  background-color: #dfa7fb;
+  border-color: #f1c5ff;
+  border: width 2%;
+  color: #ffffff;
 }
 
+.row-custom {
+  height: 20vh;
+}
+
+.btn-custom {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.svgColores{
+  background-image: url("../resources/botonesTemas/FullBotonColores.svg");  
+}
+
+.svgAnimales{
+  background-image: url("../resources/botonesTemas/FullBotonAnimales.svg");  
+}
+
+.svgNumeros{
+  background-image: url("../resources/botonesTemas/FullBotonNumeros.svg");  
+}
+
+.svgSoonMore{
+  background-image: url("../resources/botonesTemas/FullBotonSoonMore.svg");
+}
+
+.svgFlechaDer{
+  background-image: url("../resources/flechasPracticeMode/flechaDer.svg");
+  float: left;
+}
+
+.svgFlechaIzq{
+  background-image: url("../resources/flechasPracticeMode/flechaIzq.svg");
+  float: right;
+}
+.svgBoton{
+  height: 100%;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .svgColores{
+  background-image: url("../resources/botonesTemas/FullBotonColoresBig.svg");
+}
+.svgFlechaDer{
+  background-image: url("../resources/flechasPracticeMode/flechaBigDer.svg");
+}
+.svgNumeros{
+  background-image: url("../resources/botonesTemas/FullBotonNumerosBig.svg");
+}
+.svgAnimales{
+  background-image: url("../resources/botonesTemas/FullBotonAnimalesBig.svg");
+}
+.svgSoonMore {
+  background-image: url("../resources/botonesTemas/FullBotonSoonMoreBig.svg");
+}
+}
+
+@media (min-width: 992px) {
+  .svgAnimales{
+  background-image: url("../resources/botonesTemas/FullBotonAnimalesBig.svg");
   
- header p{
-   text-align: center;
-   margin-bottom: 0;
- }
-
- table {
-  background-image: url("/MIAU/ClientApp/resources/fondo-cesped-hd.jpg");
-  background-size: cover;
-  width: 80%;
-  height: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  margin: 0 auto;
-  padding-top: 30%;
-  margin-top: 80px; /* agrega margen superior */
-  overflow-y: scroll;
 }
 
-
-
-table tr {
-  height: 100px;
+.svgNumeros{
+  background-image: url("../resources/botonesTemas/FullBotonNumerosBig.svg");
+}
+.svgColores{
+  background-image: url("../resources/botonesTemas/FullBotonColoresBig.svg");
+}
+.svgFlechaDer{
+  background-image: url("../resources/flechasPracticeMode/flechaDer.svg");
 }
 
-td {
-  width: 150px; /* ancho fijo */
-  height: 150px; /* altura fija */
+.svgSoonMore {
+  background-image: url("../resources/botonesTemas/FullBotonSoonMoreBig.svg");
+}
 }
 
-td.filamentira {
-  height: auto;
-}
-
-
-td img.flecha-drc {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 90%;
-  transform: rotate(-90deg) scaleX(-1);
-  margin-top: 40px;
-  margin-left: 2%;
-}
-
-td img.flecha-izq {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 90%;
-  transform: rotate(-270deg);
-  margin-left: 75%;
-  margin-top: 10%;
-}
-
-.button1 {
-  background-color: #ef97ff;
-  border: 3px solid #f1c5ff;
-  height: 100%;
-  width: 100%;
-  margin: 0 10px;
-  border-radius: 20px;
-  display: flex;
-}
-
-.button1 p, .button3 p {
-  margin-top: 10px;
-  width: 60%;
-  font-size: xx-large;
-  padding-left: 20px;
-}
-
-.button1, .button2, .button3 {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
-}
-
-.button2 {
-  background-color: #a5d7df;
-  border: 3px solid #79a6ff;
-  height: 100%;
-  width: 100%;
-  margin-right: 50px;
-  border-radius: 20px;
-  display: flex;
-}
-
-.button2 p{
-  margin-top: 10px;
-  width: 60%;
-  font-size: xx-large;
-  padding-right: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.button4 p {
-  width: 60%;
-  font-size: xx-large;
-  white-space: nowrap;
-}
-
-.button2 img {
+.col-custom {
   max-width: 100%;
   max-height: 100%;
 }
-
-.button3 {
-  background-color: #ffc46d;
-  border: 3px solid #ffaf2d;
-  height: 100%;
-  width: 100%;
-  margin: 0 10px;
-  border-radius: 20px;
-  display: flex;
-  
-  
-}
-
-.button4 {
-  background-color: #81ffb9;
-  border: 3px solid #009863;
-  height: 100%;
-  width: 100%;
-  margin-right: 50px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-
-
-
-
 
 @keyframes salta {
   0% { transform: translateY(0); }
