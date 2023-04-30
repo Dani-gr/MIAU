@@ -73,8 +73,14 @@ startGame = function () {
             e.dataTransfer.setData('text', this.id);
         });
     });
-}
 
+    document.querySelectorAll('.letter').forEach(function (value) {
+        value.addEventListener('click', function () {
+            moveAuto(this);
+        });
+    });
+
+}
 
 document.addEventListener('dragover', function (e) {
     e.preventDefault();
@@ -90,6 +96,24 @@ document.addEventListener('drop', function (e) {
 
     move(space, droppedLetter);
 });
+
+moveAuto = function (clickedLetter) {
+    if (clickedLetter.parentNode === lettersDiv) {
+        // Buscar un espacio libre en la respuesta
+        buscarLibre = function () {
+            for (let i = 0; i < answerDiv.childElementCount; i++)
+                if (answerDiv.children[i].childElementCount === 0) return answerDiv.children[i];
+            return null;
+        }
+        space = buscarLibre();
+        if (space == null) return;
+        move(space, clickedLetter);
+    } else {
+        // Quitar la letra y devolverla 
+        move(lettersDiv, clickedLetter);
+    }
+}
+
 
 move = function (space, droppedLetter) {
     if (space.getAttribute("class") === "answer-space") {
