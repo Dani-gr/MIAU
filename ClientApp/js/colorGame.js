@@ -27,7 +27,6 @@ startGame = function () {
     if (num >= colors.length) return;
     color = colors[num];
 
-
     letters = color.split("");
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
@@ -36,6 +35,37 @@ startGame = function () {
 
     colorDisplay.style.backgroundColor = color;
     answerDiv.style.backgroundColor = "#fff";
+
+    translate = function (string) {
+        let name;
+        switch (string) {
+            case "red":
+                name = "Rojo";
+                break;
+            case "orange":
+                name = "Naranja";
+                break;
+            case "yellow":
+                name = "Amarillo";
+                break;
+            case "green":
+                name = "Verde";
+                break;
+            case "aqua":
+                name = "Aqua";
+                break;
+            case "blue":
+                name = "Azul";
+                break;
+            case "purple":
+                name = "Morado";
+                break;
+        }
+        return name;
+    }
+    colorDisplay.innerText = translate(color);
+    colorDisplay.style.color = color === "blue" || color === "purple" ? "aliceblue" : "black";
+
 
     // Eliminar las letras anteriores
     for (let i = lettersDiv.childElementCount - 1; i >= 0; i--)

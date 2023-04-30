@@ -60,7 +60,36 @@ startGame = function () {
         return png;
     }
 
+    translate = function (string) {
+        let name;
+        switch (string) {
+            case "one":
+                name = "uno";
+                break;
+            case "two":
+                name = "dos";
+                break;
+            case "three":
+                name = "tres";
+                break;
+            case "four":
+                name = "cuatro";
+                break;
+            case "five":
+                name = "cinco";
+                break;
+            case "six":
+                name = "seis";
+                break;
+            case "ten":
+                name = "diez";
+                break;
+        }
+        return name;
+    }
+
     document.getElementById("number-display").src = searchResource(number);
+    document.getElementById("number-display").alt = translate(number);
 
     answerDiv.style.backgroundColor = "#fff";
 

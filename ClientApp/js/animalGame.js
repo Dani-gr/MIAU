@@ -45,7 +45,31 @@ startGame = function () {
         }
         return png;
     }
+
+    translate = function (string) {
+        let name;
+        switch (string) {
+            case "sheep":
+                name = "oveja";
+                break;
+            case "lion":
+                name = "león";
+                break;
+            case "dog":
+                name = "perro";
+                break;
+            case "elephant":
+                name = "elefante";
+                break;
+            case "shark":
+                name = "tiburón";
+                break;
+        }
+        return name;
+    }
+
     document.getElementById("animal-display").src = searchResource(animal);
+    document.getElementById("animal-display").alt = translate(animal);
 
     letters.sort(function () { return Math.random() - 0.5; });
 
