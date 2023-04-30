@@ -22,7 +22,7 @@
         <div class="col">
             <div class="progress">
                 <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                    role="progressbar" aria-label="Barra de progreso" aria-valuemin="0"></div>
+                    role="progressbar" aria-label="Barra de progreso" aria-valuemin="0" tabindex="0"></div>
             </div>
         </div>
         <div class="col-1"></div>
@@ -30,14 +30,14 @@
     <div id="game-container">
         <h1>¿Cu&aacute;l es este color?</h1>
         <h2>Arrastra las letras al espacio que quieras, o hazles click para moverlas al primer espacio libre.</h2>
-        <div id="color-display">
+        <div id="color-display" tabindex="0">
 
         </div>
-        <div id="answer">
+        <div id="answer" tabindex="0" aria-label="Respuesta">
 
         </div>
 
-        <div id="letters"></div>
+        <div id="letters" aria-label="Letras sin usar"></div>
         <button id="verify" disabled="true">Verificar</button>
     </div>
 

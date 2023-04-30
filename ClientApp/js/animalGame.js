@@ -148,10 +148,7 @@ moveAuto = function (clickedLetter) {
         space = buscarLibre();
         if (space == null) return;
         move(space, clickedLetter);
-    } else {
-        // Quitar la letra y devolverla 
-        move(lettersDiv, clickedLetter);
-    }
+    } else move(lettersDiv, clickedLetter); // Quitar la letra y devolverla 
 }
 
 move = function (space, droppedLetter) {
@@ -178,7 +175,7 @@ verifyButton.addEventListener("click", function () {
     let word = "";
     const spaces = document.querySelectorAll(".answer-space");
     spaces.forEach(function (value) {
-        word += value.firstChild.innerHTML;
+        word += value.firstChild.innerText;
     });
 
     if (word.toUpperCase() === animal.toUpperCase()) {
