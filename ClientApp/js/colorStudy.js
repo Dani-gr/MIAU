@@ -41,9 +41,12 @@ function mostrarBoton() {
             
         let audio = new Audio(audioFileName);
         color.audio = audio;
+
+        color.addEventListener("keyup", function(){
+            color.audio.play();
+        })
     
         color.addEventListener("mouseover", function () {
-            console.log(color.audio)
             color.audio.play();
         });
     
@@ -82,6 +85,10 @@ button.onclick = function () {
             
         let audio = new Audio(audioFileName);
         color.audio = audio;
+
+        color.addEventListener("keyup", function(){
+            color.audio.play();
+        })
     
         color.addEventListener("mouseover", function () {
             console.log(color.audio)

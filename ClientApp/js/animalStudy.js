@@ -21,6 +21,10 @@ function mostrarContenidoAnimals() {
     botonpamostraranimals.style.display="none";
 }
 
+doggy.addEventListener("keyup" , function() {
+    audioperro.play();
+});
+
 doggy.addEventListener("mouseover" , function() {
     audioperro.play();
 });
@@ -28,6 +32,10 @@ doggy.addEventListener("mouseover" , function() {
 doggy.addEventListener("mouseout", function() {
     audioperro.pause();
     audioperro.currentTime = 0;
+});
+
+sharky.addEventListener("keyup" , function() {
+    audiosharky.play();
 });
 
 sharky.addEventListener("mouseover" , function() {
@@ -39,6 +47,10 @@ sharky.addEventListener("mouseout", function() {
     audiosharky.currentTime = 0;
 });
 
+leoncito.addEventListener("keyup" , function() {
+    audiolion.play();
+});
+
 leoncito.addEventListener("mouseover" , function() {
     audiolion.play();
 });
@@ -48,6 +60,10 @@ leoncito.addEventListener("mouseout", function() {
     audiolion.currentTime = 0;
 });
 
+beeee.addEventListener("keyup" , function() {
+    audiooveja.play();
+});
+
 beeee.addEventListener("mouseover" , function() {
     audiooveja.play();
 });
@@ -55,6 +71,10 @@ beeee.addEventListener("mouseover" , function() {
 beeee.addEventListener("mouseout", function() {
     audiooveja.pause();
     audiooveja.currentTime = 0;
+});
+
+elefantillo.addEventListener("keyup" , function() {
+    audioelefante.play();
 });
 
 elefantillo.addEventListener("mouseover" , function() {

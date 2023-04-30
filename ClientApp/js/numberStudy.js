@@ -20,6 +20,11 @@ function mostrarContenidoNumber() {
     botonpamostrarnumber.style.display="none";
 }
 
+uno.addEventListener("keyup", function() {
+    console.log("esto debería ir")
+    audiouno.play();
+})
+
 uno.addEventListener("mouseover" , function() {
     audiouno.play();
 });
@@ -27,6 +32,10 @@ uno.addEventListener("mouseover" , function() {
 uno.addEventListener("mouseout", function() {
     audiouno.pause();
     audiouno.currentTime = 0;
+});
+
+dos.addEventListener("keyup" , function() {
+    audiodos.play();
 });
 
 dos.addEventListener("mouseover" , function() {
@@ -38,6 +47,10 @@ dos.addEventListener("mouseout", function() {
     audiodos.currentTime = 0;
 });
 
+tres.addEventListener("keyup" , function() {
+    audiotres.play();
+});
+
 tres.addEventListener("mouseover" , function() {
     audiotres.play();
 });
@@ -47,6 +60,11 @@ tres.addEventListener("mouseout", function() {
     audiotres.currentTime = 0;
 });
 
+cuatro.addEventListener("keyup" , function() {
+    audiocuatro.play();
+});
+
+
 cuatro.addEventListener("mouseover" , function() {
     audiocuatro.play();
 });
@@ -54,6 +72,10 @@ cuatro.addEventListener("mouseover" , function() {
 cuatro.addEventListener("mouseout", function() {
     audiocuatro.pause();
     audiocuatro.currentTime = 0;
+});
+
+cinco.addEventListener("keyup" , function() {
+    audiocinco.play();
 });
 
 cinco.addEventListener("mouseover" , function() {
@@ -65,6 +87,10 @@ cinco.addEventListener("mouseout", function() {
     audiocinco.currentTime = 0;
 });
 
+seis.addEventListener("keyup" , function() {
+    audioseis.play();
+});
+
 seis.addEventListener("mouseover" , function() {
     audioseis.play();
 });
@@ -72,6 +98,10 @@ seis.addEventListener("mouseover" , function() {
 seis.addEventListener("mouseout", function() {
     audioseis.pause();
     audioseis.currentTime = 0;
+});
+
+diez.addEventListener("keyup" , function() {
+    audiodiez.play();
 });
 
 diez.addEventListener("mouseover" , function() {
