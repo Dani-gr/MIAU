@@ -4,7 +4,7 @@ const answerDiv = document.getElementById("answer");
 const colorDisplay = document.getElementById("color-display");
 const progressBar = document.getElementById("progress-bar");
 
-const numbers = [
+const colors = [
     "red",
     "orange",
     "yellow",
@@ -16,16 +16,16 @@ const numbers = [
 let color;
 let letters;
 let num = 0;
-numbers.sort(function () { return Math.random() - 0.5; });
-progressBar.setAttribute("aria-valuemax", numbers.length);
+colors.sort(function () { return Math.random() - 0.5; });
+progressBar.setAttribute("aria-valuemax", colors.length);
 
 startGame = function () {
     progressBar.setAttribute("aria-valuenow", num);
-    progressBar.style.width = (num / numbers.length * 100).toFixed(2) + "%";
+    progressBar.style.width = (num / colors.length * 100).toFixed(2) + "%";
 
     // Seleccionar el color y las letras
-    if (num >= numbers.length) return;
-    color = numbers[num];
+    if (num >= colors.length) return;
+    color = colors[num];
 
 
     letters = color.split("");
@@ -74,12 +74,12 @@ startGame = function () {
         });
     });
 
+    // Añadir evento de click a todas las letras
     document.querySelectorAll('.letter').forEach(function (value) {
         value.addEventListener('click', function () {
             moveAuto(this);
         });
     });
-
 }
 
 document.addEventListener('dragover', function (e) {
@@ -98,6 +98,7 @@ document.addEventListener('drop', function (e) {
 });
 
 moveAuto = function (clickedLetter) {
+    if (num >= colors.length) return;
     if (clickedLetter.parentNode === lettersDiv) {
         // Buscar un espacio libre en la respuesta
         buscarLibre = function () {
@@ -114,8 +115,8 @@ moveAuto = function (clickedLetter) {
     }
 }
 
-
 move = function (space, droppedLetter) {
+    if (num >= colors.length) return;
     if (space.getAttribute("class") === "answer-space") {
         // Mover la letra al espacio de respuesta correspondiente
         droppedLetter.parentNode.removeChild(droppedLetter);
@@ -147,9 +148,13 @@ verifyButton.addEventListener("click", function () {
         num++;
         progressBar.setAttribute("aria-valuenow", num);
         verifyButton.toggleAttribute("disabled", true);
-        if (num >= numbers.length)
+        if (num >= colors.length) {
             alert("¡Práctica terminada! :D");
-
+            document.querySelectorAll('.letter').forEach(function (value) {
+                value.setAttribute("draggable", "false");
+                value.style.cursor = "default";
+            });
+        }
         startGame();
     } else {
         answerDiv.style.backgroundColor = "red";

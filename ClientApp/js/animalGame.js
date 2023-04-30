@@ -9,31 +9,43 @@ const animals = [
 
 let animal;
 let letters;
-let a = 0;
+let num = 0;
 animals.sort(function () { return Math.random() - 0.5; });
 progressBar.setAttribute("aria-valuemax", animals.length);
 
 startGame = function () {
-    progressBar.setAttribute("aria-valuenow", a);
-    progressBar.style.width = (a / animals.length * 100).toFixed(2) + "%";
+    progressBar.setAttribute("aria-valuenow", num);
+    progressBar.style.width = (num / animals.length * 100).toFixed(2) + "%";
 
     // Seleccionar el color y las letras
-    if (a >= animals.length) return;
-    animal = animals[a];
+    if (num >= animals.length) return;
+    animal = animals[num];
     letters = animal.split("");
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
     letters.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
 
-    if (animal === "sheep")
-        document.getElementById("animal-display").src = "resources/animals/sheep.png";
-    else if (animal === "lion")
-        document.getElementById("animal-display").src = "resources/animals/lion.png";
-    else if (animal === "dog")
-        document.getElementById("animal-display").src = "resources/animals/dog.png";
-    else if (animal === "elephant")
-        document.getElementById("animal-display").src = "resources/animals/elephant.png";
-    else if (animal === "shark")
-        document.getElementById("animal-display").src = "resources/animals/shark.png";
+    searchResource = function (string) {
+        let png;
+        switch (string) {
+            case "sheep":
+                png = "./resources/animals/sheep.png";
+                break;
+            case "lion":
+                png = "./resources/animals/lion.png";
+                break;
+            case "dog":
+                png = "./resources/animals/dog.png";
+                break;
+            case "elephant":
+                png = "./resources/animals/elephant.png";
+                break;
+            case "shark":
+                png = "./resources/animals/shark.png";
+                break;
+        }
+        return png;
+    }
+    document.getElementById("animal-display").src = searchResource(animal);
 
     letters.sort(function () { return Math.random() - 0.5; });
 
@@ -75,6 +87,13 @@ startGame = function () {
             e.dataTransfer.setData('text', this.id);
         });
     });
+
+    // Añadir evento de click a todas las letras
+    document.querySelectorAll('.letter').forEach(function (value) {
+        value.addEventListener('click', function () {
+            moveAuto(this);
+        });
+    });
 }
 
 
@@ -90,6 +109,29 @@ document.addEventListener('drop', function (e) {
     // Obtener el elemento donde se soltó la letra
     const space = e.target;
 
+    move(space, droppedLetter);
+});
+
+moveAuto = function (clickedLetter) {
+    if (num >= animals.length) return;
+    if (clickedLetter.parentNode === lettersDiv) {
+        // Buscar un espacio libre en la respuesta
+        buscarLibre = function () {
+            for (let i = 0; i < answerDiv.childElementCount; i++)
+                if (answerDiv.children[i].childElementCount === 0) return answerDiv.children[i];
+            return null;
+        }
+        space = buscarLibre();
+        if (space == null) return;
+        move(space, clickedLetter);
+    } else {
+        // Quitar la letra y devolverla 
+        move(lettersDiv, clickedLetter);
+    }
+}
+
+move = function (space, droppedLetter) {
+    if (num >= animals.length) return;
     if (space.getAttribute("class") === "answer-space") {
         // Mover la letra al espacio de respuesta correspondiente
         droppedLetter.parentNode.removeChild(droppedLetter);
@@ -105,7 +147,7 @@ document.addEventListener('drop', function (e) {
     for (let i = 0; i < answerDiv.childElementCount; i++)
         if (answerDiv.children[i].childElementCount === 1) ++n;
     verifyButton.toggleAttribute("disabled", n !== animal.length);
-});
+}
 
 // Verificar si el nombre del color es correcto
 verifyButton.addEventListener("click", function () {
@@ -118,11 +160,16 @@ verifyButton.addEventListener("click", function () {
     if (word.toUpperCase() === animal.toUpperCase()) {
         answerDiv.style.backgroundColor = "lawngreen";
         alert("¡Correcto! :D");
-        a++;
-        progressBar.setAttribute("aria-valuenow", a);
+        num++;
+        progressBar.setAttribute("aria-valuenow", num);
         verifyButton.toggleAttribute("disabled", true);
-        if (a >= animals.length)
+        if (num >= animals.length) {
             alert("¡Práctica terminada! :D");
+            document.querySelectorAll('.letter').forEach(function (value) {
+                value.setAttribute("draggable", "false");
+                value.style.cursor = "default";
+            });
+        }
         startGame();
     } else {
         answerDiv.style.backgroundColor = "red";

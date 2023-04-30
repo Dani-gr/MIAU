@@ -5,12 +5,12 @@ const progressBar = document.getElementById("progress-bar");
 
 const numbers = [
     "one",
-    "ten",
-    "four",
-    "three",
-    "five",
     "two",
-    "six"
+    "three",
+    "four",
+    "five",
+    "six",
+    "ten"
 ]
 let number;
 let letters;
@@ -22,7 +22,7 @@ startGame = function () {
     progressBar.setAttribute("aria-valuenow", num);
     progressBar.style.width = (num / numbers.length * 100).toFixed(2) + "%";
 
-    // Seleccionar el color y las letras
+    // Seleccionar el número y las letras
     if (num >= numbers.length) return;
     number = numbers[num];
 
@@ -32,26 +32,35 @@ startGame = function () {
 
     letters.sort(function () { return Math.random() - 0.5; });
 
-    if (number === "one")
-        document.getElementById("number-display").src = "resources/numbers/1.png";
+    searchResource = function (string) {
+        let png;
+        switch (string) {
+            case "one":
+                png = "./resources/numbers/1.png";
+                break;
+            case "two":
+                png = "./resources/numbers/2.png";
+                break;
+            case "three":
+                png = "./resources/numbers/3.png";
+                break;
+            case "four":
+                png = "./resources/numbers/4.png";
+                break;
+            case "five":
+                png = "./resources/numbers/5.png";
+                break;
+            case "six":
+                png = "./resources/numbers/6.png";
+                break;
+            case "ten":
+                png = "./resources/numbers/10.png";
+                break;
+        }
+        return png;
+    }
 
-    else if (number === "ten")
-        document.getElementById("number-display").src = "resources/numbers/10.png";
-
-    else if (number === "four")
-        document.getElementById("number-display").src = "resources/numbers/4.png";
-
-    else if (number === "three")
-        document.getElementById("number-display").src = "resources/numbers/3.png";
-
-    else if (number === "five")
-        document.getElementById("number-display").src = "resources/numbers/5.png";
-
-    else if (number === "two")
-        document.getElementById("number-display").src = "resources/numbers/2.png";
-
-    else if (number === "six")
-        document.getElementById("number-display").src = "resources/numbers/6.png";
+    document.getElementById("number-display").src = searchResource(number);
 
     answerDiv.style.backgroundColor = "#fff";
 
@@ -91,6 +100,13 @@ startGame = function () {
             e.dataTransfer.setData('text', this.id);
         });
     });
+
+    // Añadir evento de click a todas las letras
+    document.querySelectorAll('.letter').forEach(function (value) {
+        value.addEventListener('click', function () {
+            moveAuto(this);
+        });
+    });
 }
 
 
@@ -106,6 +122,29 @@ document.addEventListener('drop', function (e) {
     // Obtener el elemento donde se soltó la letra
     const space = e.target;
 
+    move(space, droppedLetter);
+});
+
+moveAuto = function (clickedLetter) {
+    if (num >= numbers.length) return;
+    if (clickedLetter.parentNode === lettersDiv) {
+        // Buscar un espacio libre en la respuesta
+        buscarLibre = function () {
+            for (let i = 0; i < answerDiv.childElementCount; i++)
+                if (answerDiv.children[i].childElementCount === 0) return answerDiv.children[i];
+            return null;
+        }
+        space = buscarLibre();
+        if (space == null) return;
+        move(space, clickedLetter);
+    } else {
+        // Quitar la letra y devolverla 
+        move(lettersDiv, clickedLetter);
+    }
+}
+
+move = function (space, droppedLetter) {
+    if (num >= numbers.length) return;
     if (space.getAttribute("class") === "answer-space") {
         // Mover la letra al espacio de respuesta correspondiente
         droppedLetter.parentNode.removeChild(droppedLetter);
@@ -121,9 +160,9 @@ document.addEventListener('drop', function (e) {
     for (let i = 0; i < answerDiv.childElementCount; i++)
         if (answerDiv.children[i].childElementCount === 1) ++n;
     verifyButton.toggleAttribute("disabled", n !== number.length);
-});
+}
 
-// Verificar si el nombre del color es correcto
+// Verificar si el nombre del número es correcto
 verifyButton.addEventListener("click", function () {
     let word = "";
     const spaces = document.querySelectorAll(".answer-space");
@@ -137,9 +176,13 @@ verifyButton.addEventListener("click", function () {
         num++;
         progressBar.setAttribute("aria-valuenow", num);
         verifyButton.toggleAttribute("disabled", true);
-        if (num >= numbers.length)
+        if (num >= numbers.length) {
             alert("¡Práctica terminada! :D");
-
+            document.querySelectorAll('.letter').forEach(function (value) {
+                value.setAttribute("draggable", "false");
+                value.style.cursor = "default";
+            });
+        }
         startGame();
     } else {
         answerDiv.style.backgroundColor = "red";
