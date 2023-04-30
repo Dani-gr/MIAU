@@ -1,70 +1,73 @@
-const doggy = document.getElementById('doggy');
-const sharky = document.getElementById('sharky');
-const leoncito = document.getElementById('leoncito');
-const beeee = document.getElementById('beeee');
-const elefantillo = document.getElementById('elefantillo');
-const audio= document.getElementById('audio');
-audio.volume = 1;
+const doggy = document.getElementById('dog');
+const sharky = document.getElementById('shark');
+const leoncito = document.getElementById('lion');
+const beeee = document.getElementById('sheep');
+const elefantillo = document.getElementById('elephant');
+const audioperro = document.getElementById('audioperro');
+const audiosharky = document.getElementById('audiosharky');
+const audiolion = document.getElementById('audiolion');
+const audiooveja = document.getElementById('audiooveja');
+const audioelefante = document.getElementById('audioelefante');
+audioperro.volume = 1;
+audiosharky.volume = 1;
+audiolion.volume = 1;
+audiooveja.volume = 1;
+audioelefante.volume = 1;
 
-const botonpamostrar = document.getElementsByClassName("paramostraranimals")[0];
+const botonpamostraranimals = document.getElementsByClassName("paramostraranimals")[0];
 
-function mostrarContenido() {
+function mostrarContenidoAnimals() {
     document.getElementById("contenidoanimals").style.display = "block";
-    botonpamostrar.style.display="none";
+    botonpamostraranimals.style.display="none";
 }
 
 doggy.addEventListener("mouseover" , function() {
-    console.log("Mouse entered the doggy element");
-    audio.play();
+    audioperro.play();
 });
 
 doggy.addEventListener("mouseout", function() {
-    audio.pause();
-    audio.currentTime = 0;
+    audioperro.pause();
+    audioperro.currentTime = 0;
 });
 
 sharky.addEventListener("mouseover" , function() {
-    console.log("Mouse entered the doggy element");
-    audio.play();
+    audiosharky.play();
 });
 
 sharky.addEventListener("mouseout", function() {
-    audio.pause();
-    audio.currentTime = 0;
+    audiosharky.pause();
+    audiosharky.currentTime = 0;
 });
 
 leoncito.addEventListener("mouseover" , function() {
-    console.log("Mouse entered the doggy element");
-    audio.play();
+    audiolion.play();
 });
 
 leoncito.addEventListener("mouseout", function() {
-    audio.pause();
-    audio.currentTime = 0;
+    audiolion.pause();
+    audiolion.currentTime = 0;
 });
 
 beeee.addEventListener("mouseover" , function() {
-    console.log("Mouse entered the doggy element");
-    audio.play();
+    audiooveja.play();
 });
 
 beeee.addEventListener("mouseout", function() {
-    audio.pause();
-    audio.currentTime = 0;
+    audiooveja.pause();
+    audiooveja.currentTime = 0;
 });
 
 elefantillo.addEventListener("mouseover" , function() {
-    console.log("Mouse entered the doggy element");
-    audio.play();
+    audioelefante.play();
 });
 
 elefantillo.addEventListener("mouseout", function() {
-    audio.pause();
-    audio.currentTime = 0;
+    audioelefante.pause();
+    audioelefante.currentTime = 0;
 });
 
 function mostrarBoton() {
-    botonpamostrar.style.display = "block";
+    botonpamostraranimals.style.display = "block";
 }
 
 // Ejecutamos la función al cargar la página
