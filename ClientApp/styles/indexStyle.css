@@ -3,7 +3,7 @@
 
 
 body {
-    position: relative; 
+    position: relative;
     left: 560px;
     top: 180px;
     width: 500px;
@@ -18,7 +18,7 @@ img {
 }
 
 fieldset#titulico {
-    background-color:rgb(255, 136, 196);
+    background-color: rgb(255, 136, 196);
     position: relative;
     left: -34px;
     top: -10px;
@@ -46,12 +46,16 @@ button {
     border-radius: 50px;
     font-size: xx-large;
     color: rgb(27, 5, 9);
-    border: 1px solid #2e518b; /*anchura, estilo y color borde*/
-    padding: 10px; /*espacio alrededor texto*/
-    background-color:#96e6ff; /*color botón*/
-    text-transform: uppercase; /*capitalización texto*/
+    border: 1px solid #2e518b;
+    /*anchura, estilo y color borde*/
+    padding: 10px;
+    /*espacio alrededor texto*/
+    background-color: #96e6ff;
+    /*color botón*/
+    text-transform: uppercase;
+    /*capitalización texto*/
 }
 
 h3 {
-    background-color:rgb(255, 136, 196);
+    background-color: rgb(255, 136, 196);
 }
