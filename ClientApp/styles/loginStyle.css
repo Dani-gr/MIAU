@@ -1,9 +1,5 @@
 @import url("./commonStyles.css");
-
-* {
-    background-image: url("/MIAU/ClientApp/resources/Background.png");
-    font-size: xx-large;
-}
+/*
 
 fieldset#cuadrito1 {
     position: relative;
@@ -65,4 +61,4 @@ img.Umberto  {
     top: 370px;
     width: 20%;
     right: 10px;
-}
+}*/

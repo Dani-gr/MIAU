@@ -1,6 +1,6 @@
-* {
-    background: #FFF8BB;
-}
+@import url(commonStyles.css);
+
+
 
 body {
     position: relative; 
