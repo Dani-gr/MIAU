@@ -1,75 +1,57 @@
+function saltar(gatito, eventImages) {
+  eventImages.forEach(image => {
+    image.addEventListener("mouseenter", () => {
+      gatito.classList.add("salta");
+    });
+  
+    image.addEventListener("mouseleave", () => {
+      gatito.classList.remove("salta");
+    });
+  });
+}
+ 
 const gatito = document.getElementById("gatito");
 const eventImages = document.querySelectorAll(".botones");
 
-eventImages.forEach(image => {
-  image.addEventListener("mouseenter", () => {
-    gatito.classList.add("salta");
-  });
+saltar(gatito, eventImages);
 
-  image.addEventListener("mouseleave", () => {
-    gatito.classList.remove("salta");
-  });
-});
 
 const gatete = document.getElementById("gatete");
 const boton = document.querySelectorAll(".btn");
 
-boton.forEach(image => {
-  image.addEventListener("mouseenter", () => {
-    gatete.classList.add("salta");
-  });
+saltar(gatete, boton);
 
-  image.addEventListener("mouseleave", () => {
-    gatete.classList.remove("salta");
+function mostrarBurbuja(botonPulsado, bubbleMostrar, bubbleBienvenida){
+  botonPulsado.forEach(boton => {
+    boton.addEventListener('mouseover', () => {
+      bubbleMostrar.style.display = 'block';
+      bubbleBienvenida.style.display = 'none';
+    });
+  
+    boton.addEventListener('mouseout', () => {
+      bubbleMostrar.style.display = 'none';
+      bubbleBienvenida.style.display = 'block';
+    });
   });
-});
-
-const botonAnimales = document.querySelectorAll(".button2");
-const bubbleAnimales = document.getElementById("bubbleAnimales");
-
-botonAnimales.forEach(boton => {
-  boton.addEventListener('mouseover', () => {
-    bubbleAnimales.style.display = 'block';
-    bubbleBienvenida.style.display = 'none';
-  });
-
-  boton.addEventListener('mouseout', () => {
-    bubbleAnimales.style.display = 'none';
-    bubbleBienvenida.style.display = 'block';
-  });
-});
+}
 
 const bubbleBienvenida = document.getElementById("bubbleBienvenida")
-const botonNumeros = document.querySelectorAll(".button3");
+const botonAnimales = document.querySelectorAll(".buttonAnimales");
+const bubbleAnimales = document.getElementById("bubbleAnimales");
+
+mostrarBurbuja(botonAnimales, bubbleAnimales, bubbleBienvenida);
+
+
+const botonNumeros = document.querySelectorAll(".buttonNumeros");
 const bubbleNumeros = document.getElementById("bubbleNumeros");
 
-botonNumeros.forEach(boton => {
-  boton.addEventListener('mouseover', () => {
-    bubbleNumeros.style.display = 'block';
-    bubbleBienvenida.style.display = 'none';
-  });
-
-  boton.addEventListener('mouseout', () => {
-    bubbleNumeros.style.display = 'none';
-    bubbleBienvenida.style.display = 'block';
-  });
-});
+mostrarBurbuja(botonNumeros, bubbleNumeros, bubbleBienvenida);
 
 
-const botonColores = document.querySelectorAll(".button1");
+const botonColores = document.querySelectorAll(".buttonColores");
 const bubbleColores = document.getElementById("bubbleColores");
 
-botonColores.forEach(boton => {
-  boton.addEventListener('mouseover', () => {
-    bubbleColores.style.display = 'block';
-    bubbleBienvenida.style.display = 'none';
-  });
-
-  boton.addEventListener('mouseout', () => {
-    bubbleColores.style.display = 'none';
-    bubbleBienvenida.style.display = 'block';
-  });
-});
+mostrarBurbuja(botonColores, bubbleColores, bubbleBienvenida);
 
 const gatitoMenu = document.getElementById("gatitoMenu");
 const botonMenu = document.querySelectorAll(".card");

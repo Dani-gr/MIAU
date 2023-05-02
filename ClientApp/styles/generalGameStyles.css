@@ -1,13 +1,17 @@
 @import url("./commonStyles.css");
 
-#game-container {
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 80px;
+h2 {
+    font-size: larger !important;
 }
 
-#number-display {
+#game-container {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#color-display {
     font-size: 48px;
     margin: 20px 0;
     padding: 50px;
@@ -70,4 +74,15 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: none;
 }

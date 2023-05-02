@@ -58,7 +58,6 @@ body {
 .bubble {
   position: fixed;
   top: 50%;
-
   z-index: 9999;
   width: 25%;
   min-width: 25%;
