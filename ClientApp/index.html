@@ -13,7 +13,7 @@
 </head>
 
 <body aria-label="Pantalla de inicio">
-    <div class="container">
+    <div class="container" aria-hidden="true">
         <div class="row justify-content-center mt-5">
             <div class="col-md-5">
 
@@ -26,8 +26,8 @@
                         </div>
                         <div class="card-body">
                             <button id="Empezar" class="btn btn-primary d-inline-flex p-0 btn-light btn-block" onclick="window.location.href = './login.html';"
-                                aria-label="Botón de inicio">
-                                <img src="resources/play-button.png" alt="Inicio" class="w-100">
+                                aria-label="pulsar para iniciar" tabindex="0">
+                                <img src="resources/play-button.png" alt="Inicio" class="w-100" aria-hidden="true">
                             </button>
                         </div>
                     </div>

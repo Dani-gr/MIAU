@@ -30,19 +30,19 @@
             <div class="col-1">
                 <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
                     onclick="window.location.href = 'index.html';" aria-label="Botón de retorno a la página de inicio">
-                    <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px"/>
+                    <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px" aria-disabled="false"/>
                 </button>
             </div>
         </nav>
     
-        <div class="container" aria-label="página de inicio de sesión">
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-5">
+        <div class="container" aria-label="página de inicio de sesión" aria-disabled="true">
+            <div class="row justify-content-center mt-5" aria-disabled="true">
+                <div class="col-md-5" aria-disabled="true">
                     <div id="tarjeta" class="card text-center" aria-label="Panel de inicio">
-                        <div id="cabecera" class="card-header">
+                        <div id="cabecera" class="card-header" aria-disabled="true">
                             <img id="logoCard" src="resources/LogoMorado.png" alt="MIAU logo" class="w-100"/>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" aria-disabled="true">
                             <fieldset id="cuadrito1">
                                 <h3> ¿Cómo te llamas? </h3>
                             </fieldset>
@@ -58,7 +58,7 @@
     
                 <div class="col-md-5 mt-3 mt-md-0">
                     <div class="UmbertoDiag">
-                        <img src="./resources/bubbles/bubbleholaumberto.png" id="burbuja">
+                        <img src="./resources/bubbles/bubbleholaumberto.png" id="burbuja" tabindex="1", aria-label="Umberto el gato te da la bienvenida, Introduce tu nombre en la entrada de texto">
                         <div class="float-right">
                             <img src="resources/Umberto.png" id="Umberto">
                         </div>
