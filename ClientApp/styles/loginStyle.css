@@ -1,68 +1,31 @@
 @import url("./commonStyles.css");
 
-* {
-    background-image: url("/MIAU/ClientApp/resources/Background.png");
-    font-size: xx-large;
+
+#tarjeta{
+    margin-top: 25%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+#cabecera {
+    background-color: rgb(174, 109, 204);
 }
 
-fieldset#cuadrito1 {
-    position: relative;
-    left: 620px;
-    top: 190px;
-    width: 230px;
-    height: 40px;
+.col-md-5 img {
+    margin-top: 20%;
+    max-width: 80%;
+  }
 
-    background: #E3A7FF;
-    border-radius: 30px;
+
+#Umberto{
+    max-height: 30%;
 }
 
-fieldset#cuadrito1 p {
-    background: #E3A7FF;
-    margin-top: 0%;
+#burbuja{
+    max-height: 100%;
 }
 
-fieldset#formnombre {
-    position: relative;
-    left: 531px;
-    top: 200px;
-    width: 300px;
-    height: 200px;
-    background: #C3F1FF;
-    border-radius: 30px;
+.card-body{
+    background-color: rgba(212, 171, 232, 0.311);
 }
 
-fieldset#formnombre form {
-    background: #C3F1FF;
-}
-
-fieldset#formnombre p {
-    background: #C3F1FF;
-    margin-bottom: 10px;
-}
-
-fieldset#formnombre input {
-    background: #cefcf5;
-}
-
-fieldset#formnombre input#botoncico {
-    background: #cafff8;
-    border-color: rgb(34, 161, 161);
-    position: relative;
-    left: 130px;
-    top: 20px;
-    border-radius: 30px;
-}
-
-img.Umberto  {
-    position: absolute;
-    right: 5px;
-    top: 500px;
-    z-index: 9999;
-}
-
-#burbuja {
-    position: absolute;
-    top: 370px;
-    width: 20%;
-    right: 10px;
-}
