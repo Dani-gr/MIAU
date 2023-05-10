@@ -21,7 +21,6 @@ function mostrarContenidoNumber() {
 }
 
 uno.addEventListener("keyup", function() {
-    console.log("esto debería ir")
     audiouno.play();
 })
 
