@@ -20,7 +20,10 @@ const botonpamostrar = document.getElementsByClassName("paramostrarcolors")[0];
 
 function mostrarContenidoColor() {
     document.getElementById("contenidocolors").style.display = "block";
-    botonpamostrar.style.display="none";
+    document.querySelectorAll('.SoundOnHover').forEach(function (audio) {
+        audio.removeAttribute("muted");
+    });
+    botonpamostrar.style.display = "none";
 }
 
 function mostrarBoton() {
@@ -36,21 +39,21 @@ function mostrarBoton() {
             colors = colors2;
 
         const colorName = colors[i];
-    
+
         let audioFileName = "resources/sounds/" + colorName[0].toLowerCase() + " " + colorName[1].toLowerCase() + ".aac";
-            
+
         let audio = new Audio(audioFileName);
         color.audio = audio;
 
-        color.addEventListener("keyup", function(){
+        color.addEventListener("keyup", function () {
             color.audio.play();
         })
-    
+
         color.addEventListener("mouseover", function () {
             color.audio.play();
         });
-    
-        color.addEventListener("mouseout", function(){
+
+        color.addEventListener("mouseout", function () {
             color.audio.pause();
             color.audio.currentTime = 0;
         });
@@ -82,20 +85,20 @@ button.onclick = function () {
         colorDisplay.innerHTML = colorName[0] + "<br/>" + colorName[1] + "<br/>";
 
         let audioFileName = "resources/sounds/" + colorName[0].toLowerCase() + " " + colorName[1].toLowerCase() + ".aac";
-            
+
         let audio = new Audio(audioFileName);
         color.audio = audio;
 
-        color.addEventListener("keyup", function(){
+        color.addEventListener("keyup", function () {
             color.audio.play();
         })
-    
+
         color.addEventListener("mouseover", function () {
             console.log(color.audio)
             color.audio.play();
         });
-    
-        color.addEventListener("mouseout", function(){
+
+        color.addEventListener("mouseout", function () {
             color.audio.pause();
             color.audio.currentTime = 0;
         });
