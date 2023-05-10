@@ -74,5 +74,9 @@ div button.paramostrarnumber {
 div#pamostrarnumber {
     position: absolute;
     top: 50%;
-    left:35%;
+    left: 35%;
+}
+
+p {
+    font-size: large;
 }
