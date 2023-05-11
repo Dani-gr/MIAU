@@ -1,9 +1,14 @@
 @import url("../commonStyles.css");
 
 h1 {
-    color: rgb(51, 165, 171);
+    color: #126d71;
     text-align: center;
     padding-top: 80px;
+}
+
+h2 {
+    font-size: larger !important;
+    text-align: center;
 }
 
 #Numbers {
@@ -78,5 +83,5 @@ div#pamostrarnumber {
 }
 
 p {
-    font-size: large;
+    font-size: x-large;
 }
