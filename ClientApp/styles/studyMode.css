@@ -18,3 +18,8 @@
     right: 10px;
 }
 
+.botonCol,
+.botonAni,
+.botonNum {
+    width: fit-content;
+}
