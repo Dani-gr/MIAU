@@ -63,6 +63,7 @@
     width: 30vw;
     min-width: 230px;
     max-width: 400px;
+    min-height: unset;
 
     position: relative;
     height: auto;
