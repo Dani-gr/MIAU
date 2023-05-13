@@ -73,9 +73,11 @@ body {
 }
 
 .bubble img {
+  /*
   max-width: 90%;
   /* ajusta el valor para cambiar el tamaño de la imagen */
-  min-height: 90%;
+  /*min-height: 90%;
+  */
 }
 
 
