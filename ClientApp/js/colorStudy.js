@@ -45,6 +45,11 @@ function mostrarBoton() {
             color.audio.play();
         })
 
+        card.addEventListener("keydown", function () {
+            card.audio.pause();
+            card.audio.currentTime = 0;
+        });
+
         color.addEventListener("mouseover", function () {
             color.audio.play();
         });
