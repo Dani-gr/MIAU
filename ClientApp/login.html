@@ -17,7 +17,7 @@
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm" aria-label="Barra de navegación">
         <div class="col-1">
             <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
-                onclick="window.location.href = 'index.html'" aria-label="Botón de retorno a la página de inicio" role="return button">
+                onclick="window.location.href = 'index.html'" aria-label="Botón de retorno a la página de inicio" role="button">
                 <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px"/>
             </button>
         </div>
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-custom py-3 fixed-top shadow-sm" aria-label="Barra de navegación">
             <div class="col-1">
                 <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
-                    onclick="window.location.href = 'index.html'" aria-label="Botón de retorno a la página de inicio" role="return button">
+                    onclick="window.location.href = 'index.html'" aria-label="Botón de retorno a la página de inicio" role="button">
                     <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px"/>
                 </button>
             </div>
@@ -46,9 +46,9 @@
                             <fieldset id="cuadrito1" aria-label="Texto que pregunta cómo te llamas">
                                 <h1> ¿Cómo te llamas? </h1>
                             </fieldset>
-                            <form id="formnombre" role="name input field">
+                            <form id="formnombre" role="form" desc="Entrada de texto para el nombre">
                                 <p>Introduzca su nombre: </p>
-                                <input class="form-control" type="text" placeholder="nombre" maxlength="20" size="20" id="nombre" aria-label="Entrada de texto para el nombre" desc="Entrada de texto para el nombre"/><br>
+                                <input class="form-control" type="text" placeholder="nombre" maxlength="20" size="20" id="nombre" aria-label="Entrada de texto para el nombre"/><br>
                                 <button id="botoncico" type="button" class="btn btn-success" aria-label="Entremos al juego"> ¡Vamos! </button>
                             </form>
                             <script src="./js/login.js"></script>
