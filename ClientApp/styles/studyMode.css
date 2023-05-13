@@ -17,3 +17,9 @@
     bottom: -10px;
     right: 10px;
 }
+
+.botonCol,
+.botonAni,
+.botonNum {
+    width: fit-content;
+}

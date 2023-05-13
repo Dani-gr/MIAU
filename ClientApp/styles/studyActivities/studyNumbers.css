@@ -1,9 +1,14 @@
 @import url("../commonStyles.css");
 
 h1 {
-    color: rgb(51, 165, 171);
+    color: #126d71;
     text-align: center;
     padding-top: 80px;
+}
+
+h2 {
+    font-size: larger !important;
+    text-align: center;
 }
 
 #Numbers {
@@ -74,5 +79,9 @@ div button.paramostrarnumber {
 div#pamostrarnumber {
     position: absolute;
     top: 50%;
-    left:35%;
+    left: 35%;
+}
+
+p {
+    font-size: x-large;
 }

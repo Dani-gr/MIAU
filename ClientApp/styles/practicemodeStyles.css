@@ -24,7 +24,8 @@ h1 {
   background-color: #dfa7fb;
   border-color: #f1c5ff;
   border: width 2%;
-  color: #ffffff;
+  color: #3B0A80
+  !important
 }
 
 .row-custom {

@@ -1,10 +1,10 @@
 h1 {
-  color: rgb(118, 32, 239);
+  color: #7620ef;
   align-content: center;
 }
 
 h2 {
-  color: rgb(32, 239, 149);
+  color: #0c7547;
 }
 
 h4 {
@@ -21,7 +21,7 @@ body {
   z-index: 0;
   font-family: 'Raleway', sans-serif;
   color: #333;
-  scrollbar-color: #ffa3d1 #fff;
+  scrollbar-color: #ffa3d1 #ffffff;
   scrollbar-base-color: #ff8dd7;
 }
 

@@ -17,98 +17,100 @@ const botonpamostrarnumber = document.getElementsByClassName("paramostrarnumber"
 
 function mostrarContenidoNumber() {
     document.getElementById("contenidonumber").style.display = "block";
-    botonpamostrarnumber.style.display="none";
+    document.querySelectorAll('.SoundOnHover').forEach(function (audio) {
+        audio.removeAttribute("muted");
+    });
+    botonpamostrarnumber.style.display = "none";
 }
 
-uno.addEventListener("keyup", function() {
-    console.log("esto debería ir")
+uno.addEventListener("keyup", function () {
     audiouno.play();
 })
 
-uno.addEventListener("mouseover" , function() {
+uno.addEventListener("mouseover", function () {
     audiouno.play();
 });
 
-uno.addEventListener("mouseout", function() {
+uno.addEventListener("mouseout", function () {
     audiouno.pause();
     audiouno.currentTime = 0;
 });
 
-dos.addEventListener("keyup" , function() {
+dos.addEventListener("keyup", function () {
     audiodos.play();
 });
 
-dos.addEventListener("mouseover" , function() {
+dos.addEventListener("mouseover", function () {
     audiodos.play();
 });
 
-dos.addEventListener("mouseout", function() {
+dos.addEventListener("mouseout", function () {
     audiodos.pause();
     audiodos.currentTime = 0;
 });
 
-tres.addEventListener("keyup" , function() {
+tres.addEventListener("keyup", function () {
     audiotres.play();
 });
 
-tres.addEventListener("mouseover" , function() {
+tres.addEventListener("mouseover", function () {
     audiotres.play();
 });
 
-tres.addEventListener("mouseout", function() {
+tres.addEventListener("mouseout", function () {
     audiotres.pause();
     audiotres.currentTime = 0;
 });
 
-cuatro.addEventListener("keyup" , function() {
+cuatro.addEventListener("keyup", function () {
     audiocuatro.play();
 });
 
 
-cuatro.addEventListener("mouseover" , function() {
+cuatro.addEventListener("mouseover", function () {
     audiocuatro.play();
 });
 
-cuatro.addEventListener("mouseout", function() {
+cuatro.addEventListener("mouseout", function () {
     audiocuatro.pause();
     audiocuatro.currentTime = 0;
 });
 
-cinco.addEventListener("keyup" , function() {
+cinco.addEventListener("keyup", function () {
     audiocinco.play();
 });
 
-cinco.addEventListener("mouseover" , function() {
+cinco.addEventListener("mouseover", function () {
     audiocinco.play();
 });
 
-cinco.addEventListener("mouseout", function() {
+cinco.addEventListener("mouseout", function () {
     audiocinco.pause();
     audiocinco.currentTime = 0;
 });
 
-seis.addEventListener("keyup" , function() {
+seis.addEventListener("keyup", function () {
     audioseis.play();
 });
 
-seis.addEventListener("mouseover" , function() {
+seis.addEventListener("mouseover", function () {
     audioseis.play();
 });
 
-seis.addEventListener("mouseout", function() {
+seis.addEventListener("mouseout", function () {
     audioseis.pause();
     audioseis.currentTime = 0;
 });
 
-diez.addEventListener("keyup" , function() {
+diez.addEventListener("keyup", function () {
     audiodiez.play();
 });
 
-diez.addEventListener("mouseover" , function() {
+diez.addEventListener("mouseover", function () {
     audiodiez.play();
 });
 
-diez.addEventListener("mouseout", function() {
+diez.addEventListener("mouseout", function () {
     audiodiez.pause();
     audiodiez.currentTime = 0;
 });

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>MIAU</title>
+    <title>Estudiar números - MIAU</title>
     <style type="text/css">
         @import url("./styles/studyActivities/studyNumbers.css");
     </style>
@@ -12,60 +12,85 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body style="background-color: rgb(243, 229, 167);">
+<body>
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
         <div class="col-1">
             <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
                 onclick="window.location.href = 'studymode.html';">
-                <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px" />
+                <img src="resources/arrow.png" alt="Flecha de retroceso"
+                    longdesc="Pulsa aquí para volver al modo estudio." style="width: 40px" />
             </button>
         </div>
     </nav>
 
-    <div id="pamostrarnumber" class="card mx-auto justify-content-center align-items-center" style="display: flex; justify-content:center;">
-        <button class="paramostrarnumber" onclick="mostrarContenidoNumber()">¡Vamos a aprender! <br> Pulsa aquí para empezar </button>
+    <div id="pamostrarnumber" class="card mx-auto justify-content-center align-items-center"
+        style="display: flex; justify-content:center;">
+        <button class="paramostrarnumber" onclick="mostrarContenidoNumber()">¡Vamos a aprender! <br> Pulsa aquí para
+            empezar </button>
     </div>
 
     <div id="contenidonumber" style="display:none;" tabindex="0">
-        <audio id="audio" class="SoundOnHover" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3" preload="auto" autoplay></audio>
+        <audio id="audio" class="SoundOnHover" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"
+            preload="auto" autoplay></audio>
         <h1>¡Aprende los n&uacute;meros en ingl&eacute;s!</h1>
-        <h4>Pasa el cursor por los n&uacute;meros para ver sus nombres.</h4>
+        <h2>Pasa el cursor por los n&uacute;meros para ver y escuchar sus nombres.</h2>
         <div id="Numbers" class="mx-auto d-block container-fluid">
             <div class="row">
                 <div id="n1" class="card" tabindex="0">
-                    <img src="./resources/numbers/1.png"/>
-                    <h3 class="hover-text" aria-hidden="true">Uno<br />One<br /></h3>
-                    <audio id="audiouno" class="SoundOnHover" src="resources/sounds/uno one.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/1.png" alt="Número 1" />
+                    <p class="hover-text" aria-hidden="true">Uno<br />
+                        <i lang="en">One</i><br />
+                    </p>
+                    <audio id="audiouno" class="SoundOnHover" src="resources/sounds/uno one.aac" preload="auto"
+                        autoplay></audio>
                 </div>
                 <div id="n2" class="card" tabindex="0">
-                    <img src="./resources/numbers/2.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Dos<br />Two<br /></h3>
-                    <audio id="audiodos" class="SoundOnHover" src="resources/sounds/dos two.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/2.png" alt="Número 2" />
+                    <p class="hover-text card-text" aria-hidden="true">Dos<br />
+                        <i lang="en">Two</i><br />
+                    </p>
+                    <audio id="audiodos" class="SoundOnHover" src="resources/sounds/dos two.aac" preload="auto"
+                        autoplay></audio>
                 </div>
                 <div id="n3" class="card" tabindex="0">
-                    <img src="./resources/numbers/3.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Tres<br />Three<br /></h3>
-                    <audio id="audiotres" class="SoundOnHover" src="resources/sounds/tres three.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/3.png" alt="Número 3" />
+                    <p class="hover-text card-text" aria-hidden="true">Tres<br />
+                        <i lang="en">Three</i><br />
+                    </p>
+                    <audio id="audiotres" class="SoundOnHover" src="resources/sounds/tres three.aac" preload="auto"
+                        autoplay></audio>
                 </div>
                 <div id="n4" class="card" tabindex="0">
-                    <img src="./resources/numbers/4.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Cuatro<br />Four<br /></h3>
-                    <audio id="audiocuatro" class="SoundOnHover" src="resources/sounds/cuatro four.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/4.png" alt="Número 4" />
+                    <p class="hover-text card-text" aria-hidden="true">Cuatro<br />
+                        <i lang="en">Four</i><br />
+                    </p>
+                    <audio id="audiocuatro" class="SoundOnHover" src="resources/sounds/cuatro four.aac" preload="auto"
+                        autoplay></audio>
                 </div>
                 <div id="n5" class="card" tabindex="0">
-                    <img src="./resources/numbers/5.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Cinco<br />Five<br /></h3>
-                    <audio id="audiocinco" class="SoundOnHover" src="resources/sounds/cinco five.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/5.png" alt="Número 5" />
+                    <p class="hover-text card-text" aria-hidden="true">Cinco<br />
+                        <i lang="en">Five</i><br />
+                    </p>
+                    <audio id="audiocinco" class="SoundOnHover" src="resources/sounds/cinco five.aac" preload="auto"
+                        autoplay></audio>
                 </div>
                 <div id="n6" class="card" tabindex="0">
-                    <img src="./resources/numbers/6.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Seis<br />Six<br /></h3>
-                    <audio id="audioseis" class="SoundOnHover" src="resources/sounds/seis six.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/6.png" alt="Número 6" />
+                    <p class="hover-text card-text" aria-hidden="true">Seis<br />
+                        <i lang="en">Six</i><br />
+                    </p>
+                    <audio id="audioseis" class="SoundOnHover" src="resources/sounds/seis six.aac" preload="auto"
+                        autoplay></audio>
                 </div>
                 <div id="n10" class="card" tabindex="0">
-                    <img src="./resources/numbers/10.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Diez<br />Ten<br /></h3>
-                    <audio id="audiodiez" class="SoundOnHover" src="resources/sounds/diez ten.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/numbers/10.png" alt="Número 10" />
+                    <p class="hover-text card-text" aria-hidden="true">Diez<br />
+                        <i lang="en">Ten</i><br />
+                    </p>
+                    <audio id="audiodiez" class="SoundOnHover" src="resources/sounds/diez ten.aac" preload="auto"
+                        autoplay></audio>
                 </div>
             </div>
         </div>
