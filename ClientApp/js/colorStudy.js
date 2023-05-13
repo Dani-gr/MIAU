@@ -1,5 +1,4 @@
 const colorDivs = document.getElementById("PaletaDiv").children;
-//const colorDisplays = colorDivs[(color) => { color.firstElementChild }]
 const button = document.getElementById("changeColorsButton");
 const colors1 = [
     ["Verde", "Green"],
@@ -20,9 +19,6 @@ const botonpamostrar = document.getElementsByClassName("paramostrarcolors")[0];
 
 function mostrarContenidoColor() {
     document.getElementById("contenidocolors").style.display = "block";
-    document.querySelectorAll('.SoundOnHover').forEach(function (audio) {
-        audio.removeAttribute("muted");
-    });
     botonpamostrar.style.display = "none";
 }
 
@@ -94,7 +90,6 @@ button.onclick = function () {
         })
 
         color.addEventListener("mouseover", function () {
-            console.log(color.audio)
             color.audio.play();
         });
 
