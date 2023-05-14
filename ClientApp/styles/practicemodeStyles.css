@@ -23,7 +23,7 @@ html {
 h1 {
   background-color: #dfa7fb;
   border-color: #f1c5ff;
-  border: width 2%;
+  border-width: 2px;
   color: #3B0A80 !important
 }
 
