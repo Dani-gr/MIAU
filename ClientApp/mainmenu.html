@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MIAU - Menú principal</title>
-    <style type="text/css">
+    <style>
         @import url("styles/mainMenu.css");
         @import url("styles/commonStyles.css");
     </style>
@@ -17,11 +17,11 @@
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
         <div class="col-1">
             <button class="btn btn-primary" id="back" onclick="window.location.href = 'index.html';">
-                <img src="resources/arrow.png" alt="Flecha de retroceso" />
+                <img src="resources/arrow.png" alt="Flecha de retroceso">
             </button>
         </div>
     </nav>
-    <h1 id="nombre"></h1>
+    <h1 id="nombre">¡Hola!</h1>
     <div id="umberto-wrapper">
         <div class="bg-image d-flex align-items-center justify-content-center">
             <img src="./resources/Umberto/solo-gatito.png" class="Umberto" id="gatitoMenu" alt="logo">
@@ -39,18 +39,17 @@
                 id="bubbleTienda" aria-label="¡Personaliza a nuestro gato, Umberto!" style="display:none">
         </div>
         <div class="bg-image container-fluid" id="background"
-            style="background-image: url('./resources/Background.png'); height: 100vh;"
-            style="position: relative; z-index: 0;">
+            style="background-image: url('./resources/Background.png'); height: 100vh; position: relative; z-index: 0;">
             <div class="container-fluid" id="wrapperMapa">
                 <div class="card botonPractica" id="practica">
-                    <img src="./resources/Mapa aventura.png" alt="img" id="imgPractica" />
+                    <img src="./resources/Mapa aventura.png" alt="img" id="imgPractica">
                     <a href="practicemode.html" class="btn btn-primary" id="btnpractica">¡Practica las palabras que has
                         aprendido!</a>
                 </div>
 
                 <div class="container-fluid" id="wrapperEstudio">
                     <div class="card p-3 botonEstudio" id="estudio">
-                        <img src="./resources/estudio.png" alt="img" id="imgEstudio" />
+                        <img src="./resources/estudio.png" alt="img" id="imgEstudio">
                         <a href="studymode.html" class="btn btn-primary">Aprende nuevas palabras en inglés</a>
                     </div>
 
