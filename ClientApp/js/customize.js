@@ -1,41 +1,42 @@
+const nombre = localStorage.getItem("nombre").trim();
+if (nombre == null) nombre = "preset";
 const Umberto = document.getElementById("Umberto").firstElementChild;
+const variable = "accesorio_".concat(nombre);
 let accesorio = "-";
 
 updateUmberto = () => {
     switch (accesorio) {
         case "a1":
-            // TODO
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
-            Umberto.alt = "Umberto con ";
+            Umberto.alt = "Umberto con lacito";
+            Umberto.src = "./resources/Umberto/UmbertoLazo.png";
             break;
         case "a2":
-            // TODO
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
-            Umberto.alt = "Umberto con ";
+            Umberto.alt = "Umberto con gafas";
+            Umberto.src = "./resources/Umberto/UmbertoGafas.png";
             break;
         case "a3":
             // TODO
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
             Umberto.alt = "Umberto con ";
+            Umberto.src = "./resources/Umberto/solo-gatito.png";
             break;
         case "a4":
             // TODO
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
             Umberto.alt = "Umberto con ";
+            Umberto.src = "./resources/Umberto/solo-gatito.png";
             break;
         case "a5":
             // TODO
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
             Umberto.alt = "Umberto con ";
+            Umberto.src = "./resources/Umberto/solo-gatito.png";
             break;
         case "a6":
             // TODO
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
             Umberto.alt = "Umberto con ";
+            Umberto.src = "./resources/Umberto/solo-gatito.png";
             break;
         default:
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
             Umberto.alt = "Umberto";
+            Umberto.src = "./resources/Umberto/solo-gatito.png";
             break;
     }
 }
@@ -49,7 +50,7 @@ update = (elemento) => {
     // Quitar el seleccionado
     if (elemento == null || elemento.id == null || accesorio === elemento.id) {
         accesorio = "-";
-        localStorage.setItem("accesorio", "-");
+        localStorage.setItem(variable, "-");
         updateUmberto();
         return;
     }
@@ -60,7 +61,7 @@ update = (elemento) => {
         accesorio = elemento.id;
     } catch { }
 
-    localStorage.setItem("accesorio", accesorio);
+    localStorage.setItem(variable, accesorio);
     updateUmberto();
 }
 
@@ -81,4 +82,4 @@ document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", function () { update(this) });
 });
 
-update(document.getElementById(localStorage.getItem("accesorio")));
+update(document.getElementById(localStorage.getItem(variable)));

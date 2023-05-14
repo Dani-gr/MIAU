@@ -23,7 +23,8 @@ h1 {
   position: fixed;
   top: 100px;
   left: 132px;
-  transform: translateX(-50%); /* Mueve el elemento hacia la izquierda en la mitad de su ancho */
+  transform: translateX(-50%);
+  /* Mueve el elemento hacia la izquierda en la mitad de su ancho */
   border: 3px solid #ff8dd7;
   color: rgb(255, 255, 255);
   background-color: rgb(255, 173, 214);
@@ -32,101 +33,95 @@ h1 {
   z-index: 1;
 }
 
-.umberto-wrapper{
-    position: relative; 
-    left: 0; 
-    top: 0;
+.umberto-wrapper {
+  position: relative;
+  left: 0;
+  top: 0;
 }
 
-.gato{
-    position: absolute; top: -6%;
-    right: 0; 
-    margin: 20px; 
-    z-index: 1; 
-    transform: scaleY(-1);
+.Umberto {
+  position: absolute;
+  top: -6%;
+  right: 0;
+  margin: 20px;
+  z-index: 1;
+  transform: scaleY(-1);
 }
 
-.imgMapa{
-    margin-bottom: 22%; 
-    margin-left: 3%; 
-    margin-right: 3%; 
-    height: auto; 
-    margin-top: 4%;
+.imgMapa {
+  margin-bottom: 22%;
+  margin-left: 3%;
+  margin-right: 3%;
+  height: auto;
+  margin-top: 4%;
 }
 
-#practica{
-    background-color: #C3F1FF; 
-    width: 43%;
+#practica {
+  background-color: #C3F1FF;
+  width: 43%;
 }
 
-#imgPractica{
-    margin-bottom: 22%; 
-    margin-left: 3%; 
-    margin-right: 3%; 
-    height: auto; 
-    margin-top: 4%;
+#imgPractica {
+  margin-bottom: 22%;
+  margin-left: 3%;
+  margin-right: 3%;
+  height: auto;
+  margin-top: 4%;
 }
 
-#btnpractica{
-    margin: 3%;
-    min-width: 23%;
+#btnpractica {
+  margin: 3%;
+  min-width: 23%;
 }
 
-#buttonMapa{
-    margin: 3%;
-    min-width: 23%;
+#buttonMapa {
+  margin: 3%;
+  min-width: 23%;
 }
 
-.card botonPractica{
-    background-color: #C3F1FF; 
-    width: 43%;
+.card botonPractica {
+  background-color: #C3F1FF;
+  width: 43%;
 }
 
-#wrapperEstudio{
-    display: flex; 
-    flex-direction: column;
+#wrapperEstudio {
+  display: flex;
+  flex-direction: column;
 }
 
-#estudio{
-    background-color: #C3F1FF; 
-    height: auto; 
-    width: 43%;
+#estudio {
+  background-color: #C3F1FF;
+  height: auto;
+  width: 43%;
 }
 
-#imgEstudio{
-    margin-bottom: 10%; 
-    height: auto;
+#imgEstudio {
+  margin-bottom: 10%;
+  height: auto;
 }
 
-#tienda{
-    background-color: #C3F1FF; 
-    height: auto; 
-    width: 43%; 
-    margin-top: 1.5%;
+#tienda {
+  background-color: #C3F1FF;
+  height: auto;
+  width: 43%;
+  margin-top: 1.5%;
 }
 
-#wrapperMapa{
-    width: 81%; 
-    position: absolute; 
-    top: 12%; left: 19%; 
-    display: flex; 
-    justify-content:center;
+#wrapperMapa {
+  width: 81%;
+  position: absolute;
+  top: 12%;
+  left: 19%;
+  display: flex;
+  justify-content: center;
 }
 
-#back{
-    background: transparent !important; 
-    outline: none; 
-    border: 0; 
-    width: 60px;
+header p {
+  text-align: center;
+  margin-bottom: 0;
 }
 
-  
- header p{
-   text-align: center;
-   margin-bottom: 0;
- }
-
- table {
+table {
   background-image: url("/MIAU/ClientApp/resources/fondo-cesped-hd.jpg");
   background-size: cover;
   width: 80%;
@@ -135,7 +130,8 @@ h1 {
   table-layout: fixed;
   margin: 0 auto;
   padding-top: 30%;
-  margin-top: 80px; /* agrega margen superior */
+  margin-top: 80px;
+  /* agrega margen superior */
   overflow-y: scroll;
 }
 
@@ -146,8 +142,10 @@ table tr {
 }
 
 td {
-  width: 150px; /* ancho fijo */
-  height: 150px; /* altura fija */
+  width: 150px;
+  /* ancho fijo */
+  height: 150px;
+  /* altura fija */
 }
 
 td.filamentira {
@@ -185,14 +183,17 @@ td img.flecha-izq {
   display: flex;
 }
 
-.button1 p, .button3 p {
+.button1 p,
+.button3 p {
   margin-top: 10px;
   width: 60%;
   font-size: xx-large;
   padding-left: 20px;
 }
 
-.button1, .button2, .button3 {
+.button1,
+.button2,
+.button3 {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 }
 
@@ -206,7 +207,7 @@ td img.flecha-izq {
   display: flex;
 }
 
-.button2 p{
+.button2 p {
   margin-top: 10px;
   width: 60%;
   font-size: xx-large;
@@ -234,8 +235,8 @@ td img.flecha-izq {
   margin: 0 10px;
   border-radius: 20px;
   display: flex;
-  
-  
+
+
 }
 
 .button4 {
@@ -258,11 +259,25 @@ td img.flecha-izq {
 
 
 @keyframes salta {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-20px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 button.no-style {
@@ -276,15 +291,14 @@ button.no-style {
   outline: none;
 }
 
-.btn-primary{
-    background-color: rgb(255, 173, 214) !important;
-    border-color: rgb(255, 173, 214) !important;
-    font-size: 1.5rem !important;
-  }
-
-
-a{
-    color: rgb(118, 32, 239) !important;
-    font-weight: 500 !important;
+.btn-primary {
+  background-color: rgb(255, 173, 214) !important;
+  border-color: rgb(255, 173, 214) !important;
+  font-size: 1.5rem !important;
 }
 
+
+a {
+  color: rgb(118, 32, 239) !important;
+  font-weight: 500 !important;
+}

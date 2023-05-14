@@ -12,7 +12,12 @@ h1 {
 
 .card-img-top {
     max-width: 130px;
+    height: 130px;
     margin: auto;
+}
+
+#a1 .card-img-top {
+    max-width: unset;
 }
 
 .col {
@@ -31,6 +36,7 @@ h1 {
 #Umberto img {
     margin-top: auto;
     margin-bottom: auto;
+    max-width: 149px;
 }
 
 .card .card-body {
