@@ -27,9 +27,8 @@ updateUmberto = () => {
             Umberto.src = "./resources/Umberto/UmbertoHoja.png";
             break;
         case "a6":
-            // TODO
-            Umberto.alt = "Umberto con ";
-            Umberto.src = "./resources/Umberto/solo-gatito.png";
+            Umberto.alt = "Umberto con corona";
+            Umberto.src = "./resources/Umberto/UmbertoCorona.png";
             break;
         default:
             Umberto.alt = "Umberto";
