@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MIAU</title>
-    <style type="text/css">
+    <style>
         @import url("./styles/Umberto.css");
     </style>
     <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
@@ -15,9 +15,8 @@
 <body style="background-color: rgb(243, 229, 167);">
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
         <div class="col-1">
-            <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
-                onclick="window.location.href = 'mainmenu.html';">
-                <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px" />
+            <button id="back" class="btn btn-primary" onclick="window.location.href = 'mainmenu.html';">
+                <img src="resources/arrow.png" alt="Flecha de retroceso">
             </button>
         </div>
     </nav>
@@ -29,57 +28,58 @@
             <div id="elementos" class="col col-auto col-md-8">
                 <div class="row row-cols-2 row-cols-lg-3">
                     <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="./resources/naranja.png" alt="Naranja" />
-                            <div class="card-body" style="background-color: aqua;">
+                        <div class="card" id="a1">
+                            <img class="card-img-top" src="./resources/Umberto/Complementos/Lazo.png" alt="Lazo">
+                            <div class="card-body">
                                 <p class="card-text">¡Equipado!</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="./resources/naranja.png" alt="Naranja" />
-                            <div class="card-body" style="background-color: aqua;">
+                        <div class="card" id="a2">
+                            <img class="card-img-top" src="./resources/Umberto/Complementos/Gafas.png" alt="Gafas">
+                            <div class="card-body">
                                 <p class="card-text">¡Equipado!</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="./resources/naranja.png" alt="Naranja" />
-                            <div class="card-body" style="background-color: aqua;">
+                        <div class="card" id="a3">
+                            <img class="card-img-top" src="./resources/Umberto/Complementos/Sombrero.png"
+                                alt="Sombrero">
+                            <div class="card-body">
                                 <p class="card-text">¡Equipado!</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="./resources/naranja.png" alt="Naranja" />
-                            <div class="card-body" style="background-color: aqua;">
+                        <div class="card" id="a4">
+                            <img class="card-img-top" src="./resources/Umberto/Complementos/Collar.png" alt="Collar">
+                            <div class="card-body">
                                 <p class="card-text">¡Equipado!</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="./resources/naranja.png" alt="Naranja" />
-                            <div class="card-body" style="background-color: aqua;">
+                        <div class="card" id="a5">
+                            <img class="card-img-top" src="./resources/Umberto/Complementos/Hoja.png" alt="Hoja">
+                            <div class="card-body">
                                 <p class="card-text">¡Equipado!</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="./resources/naranja.png" alt="Naranja" />
-                            <div class="card-body" style="background-color: aqua;">
+                        <div class="card" id="a6">
+                            <img class="card-img-top" src="./resources/Umberto/Complementos/Corona.png" alt="Corona">
+                            <div class="card-body">
                                 <p class="card-text">¡Equipado!</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="Umberto" class="col col-auto col-lg-4">
-                <img src="./resources/solo-gatito.png" alt="Umberto" /> <!-- Hacer dependiente en React -->
+            <div id="Umberto" class="col col-lg">
+                <img src="./resources/Umberto/solo-gatito.png" alt="Umberto">
             </div>
         </div>
     </div>
