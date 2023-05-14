@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MIAU - Modo práctica</title>
-  <style type="text/css">
+  <style>
     @import url("./styles/commonStyles.css");
     @import url("./styles/practicemodeStyles.css");
   </style>
@@ -17,11 +18,9 @@
   <div class="mb-3">
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
       <div class="container-fluid">
-        <a href="mainmenu.html" alt="Barra de regreso para volver al menú">
-          <button style="background: transparent; outline: none; border: 0; width: 60px;" type="button"
-            aria-label="Boton atras"><img src="./resources/arrow.png" alt="Imagen de una flecha de retroceso"
-              style="width: 100%;"></button>
-        </a>
+        <button class="btn btn-primary" id="back" onclick="window.location.href = 'mainmenu.html';">
+          <img src="resources/arrow.png" alt="Flecha de retroceso" />
+        </button>
       </div>
     </nav>
   </div>

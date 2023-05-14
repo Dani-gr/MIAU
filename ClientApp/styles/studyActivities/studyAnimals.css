@@ -1,9 +1,13 @@
 @import url("../commonStyles.css");
 
 h1 {
-    color: rgb(51, 165, 171);
+    color: #126d71;
     text-align: center;
     padding-top: 80px;
+}
+
+h4 {
+    color: #0c7547;
 }
 
 #Animals {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MIAU - Modo estudio colores</title>
-    <style type="text/css">
+    <style>
         @import url("./styles/studyActivities/studyColors.css");
     </style>
     <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
@@ -16,18 +16,16 @@
 <body>
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
         <div class="col-1">
-            <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
-                onclick="window.location.href = 'studymode.html';">
-                <img src="resources/arrow.png" alt="Flecha de retroceso" style="width:40px" />
+            <button id="back" class="btn btn-primary" onclick="window.location.href = 'studymode.html';">
+                <img src="resources/arrow.png" alt="Flecha de retroceso" />
             </button>
         </div>
     </nav>
 
     <div id="pamostrarcolors" class="card mx-auto justify-content-center align-items-center"
         style="display: flex; justify-content:center;">
-        <button class="paramostrarcolors" onclick="mostrarContenidoColor()">¡Vamos a aprender! <br> Pulsa aqu&iacute;
-            para
-            empezar </button>
+        <button class="paramostrarcolors" onclick="mostrarContenidoColor()">¡Vamos a aprender! <br />
+            Pulsa aqu&iacute; para empezar </button>
     </div>
 
     <div id="contenidocolors" style="display:none;" tabindex="0">
@@ -35,19 +33,19 @@
         <h4>Pasa el cursor por los colores para verlos.</h4>
         <div id="PaletaDiv" class="mx-auto d-block" tabindex="0">
             <div class="green" tabindex="0">
-                <p class="hover-text" aria-hidden="true">Verde<br /> <i lang="en">Green </i> <br /></p>
+                <p class="hover-text" aria-hidden="true">Verde<br /><i lang="en">Green</i><br /></p>
             </div>
             <div class="red" tabindex="0">
-                <p class="hover-text" aria-hidden="true">Rojo<br /> <i lang="en">Red </i> <br /></p>
+                <p class="hover-text" aria-hidden="true">Rojo<br /><i lang="en">Red</i><br /></p>
             </div>
             <div class="blue" tabindex="0">
-                <p class="hover-text" aria-hidden="true">Azul<br /> <i lang="en">Blue </i> <br /></p>
+                <p class="hover-text" aria-hidden="true">Azul<br /><i lang="en">Blue</i><br /></p>
             </div>
             <div class="yellow" tabindex="0">
-                <p class="hover-text" aria-hidden="true">Amarillo<br /> <i lang="en">Yellow </i> <br /></p>
+                <p class="hover-text" aria-hidden="true">Amarillo<br /><i lang="en">Yellow</i><br /></p>
             </div>
             <div class="white" tabindex="0">
-                <p class="hover-text" aria-hidden="true">Blanco<br /> <i lang="en">White </i> <br /></p>
+                <p class="hover-text" aria-hidden="true">Blanco<br /><i lang="en">White</i><br /></p>
             </div>
         </div>
 
