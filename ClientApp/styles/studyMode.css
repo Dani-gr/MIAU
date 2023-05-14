@@ -1,9 +1,21 @@
 @import url("./commonStyles.css");
 
+#main-cont {
+    padding-top: 80px;
+    width: fit-content;
+    margin-left: 10%;
+    min-width: 250px;
+    padding-bottom: 20px;
+}
+
 #button-cont button {
+    z-index: 10;
     background-color: #85d8e8;
-    height: 130px;
-    width: 550px;
+    color: #ae0505;
+    min-height: 130px;
+    height: auto;
+    max-width: 550px;
+    width: 100%;
 
     font-size: 40px;
     font-weight: 400;
@@ -12,8 +24,62 @@
     text-align: center;
 }
 
-#gatete {
+
+#Umberto-con-texto {
+    z-index: 0;
     position: fixed;
-    bottom: -10px;
-    right: 10px;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    margin-top: auto;
+    margin-right: 7vw;
+    max-height: 60vh;
+}
+
+.gatito {
+    position: unset;
+    width: auto;
+}
+
+#gatete {
+    z-index: 9999;
+    min-width: 100px;
+    width: 20vw;
+    max-width: 150px;
+    margin-left: auto;
+    float: right;
+    position: relative;
+}
+
+.bubble {
+    width: max-content;
+    position: unset;
+    height: unset;
+    min-width: unset;
+}
+
+.bubble img {
+    margin-left: auto;
+    z-index: 9999;
+    width: 30vw;
+    min-width: 230px;
+    max-width: 400px;
+    min-height: unset;
+
+    position: relative;
+    height: auto;
+}
+
+#padder {
+    padding-bottom: 275px;
+}
+
+.botonCol,
+.botonAni,
+.botonNum {
+    width: fit-content;
+}
+
+h1 {
+    text-align: center;
 }

@@ -1,7 +1,6 @@
 const nombreInput = document.getElementById("nombre");
 const boton = document.getElementById("botoncico");
 
-
 submit = () => {
   let nombreString = null;
   if (nombreInput == null) return;

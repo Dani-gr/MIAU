@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>MIAU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIAU - Modo estudio animales</title>
     <style type="text/css">
         @import url("./styles/studyActivities/studyAnimals.css");
     </style>
@@ -12,18 +13,20 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body style="background-color: rgb(243, 229, 167);">
+<body>
     <nav class="navbar navbar-custom py-3 fixed-top shadow-sm">
         <div class="col-1">
             <button style="background: transparent; outline: none; border: 0; width: 60px;" class="btn btn-primary"
                 onclick="window.location.href = 'studymode.html';">
-                <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px" />
+                <img src="resources/arrow.png" alt="ReturnArrow" style="width:40px" lang="en" />
             </button>
         </div>
     </nav>
 
-    <div id="pamostraranimals" class="card mx-auto justify-content-center align-items-center" style="display: flex; justify-content:center;">
-        <button class="paramostraranimals" onclick="mostrarContenidoAnimals()">¡Vamos a aprender! <br> Pulsa aquí para empezar </button>
+    <div id="pamostraranimals" class="card mx-auto justify-content-center align-items-center"
+        style="display: flex; justify-content:center;">
+        <button class="paramostraranimals" onclick="mostrarContenidoAnimals()">¡Vamos a aprender! <br> Pulsa aquí para
+            empezar </button>
     </div>
 
     <div id="contenidoanimals" style="display:none;" tabindex="0">
@@ -32,29 +35,24 @@
         <div id="Animals" class="mx-auto d-block container-fluid">
             <div class="row">
                 <div id="dog" class="card" tabindex="0" aria-hidden="true">
-                    <img src="./resources/animals/dog.png" aria-hidden="true"/>
-                    <h3 class="hover-text" aria-hidden="true">Perro<br />Dog<br /></h3>
-                    <audio id="audioperro" class="SoundOnHover" src="resources/sounds/perro dog.aac" preload="auto" autoplay tabindex="0" aria-hidden="true"></audio>
+                    <img src="./resources/animals/dog.png" aria-hidden="true" alt="imagen de  un perro" />
+                    <p class="hover-text" aria-hidden="true">Perro<br />Dog<br /></p>
                 </div>
                 <div id="shark" class="card" tabindex="0">
-                    <img src="./resources/animals/shark.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Tiburón<br />Shark<br /></h3>
-                    <audio id="audiosharky" class="SoundOnHover" src="resources/sounds/tiburón shark.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/animals/shark.png" alt="imagen de un tiburón" />
+                    <p class="hover-text card-text" aria-hidden="true">Tiburón<br />Shark<br /></p>
                 </div>
-                <div id="lion" class="card"  tabindex="0">
-                    <img src="./resources/animals/lion.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">León<br />Lion<br /></h3>
-                    <audio id="audiolion" class="SoundOnHover" src="resources/sounds/león lion.aac" preload="auto" autoplay></audio>
+                <div id="lion" class="card" tabindex="0">
+                    <img src="./resources/animals/lion.png" alt="imagen de un león" />
+                    <p class="hover-text card-text" aria-hidden="true">León<br />Lion<br /></p>
                 </div>
                 <div id="sheep" class="card" tabindex="0">
-                    <img src="./resources/animals/sheep.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Oveja<br />Sheep<br /></h3>
-                    <audio id="audiooveja" class="SoundOnHover" src="resources/sounds/oveja sheep.aac" preload="auto" autoplay></audio>
+                    <img src="./resources/animals/sheep.png" alt="imagen de una oveja" />
+                    <p class="hover-text card-text" aria-hidden="true">Oveja<br />Sheep<br /></p>
                 </div>
-                <div id="elephant" class="card"  tabindex="0">
-                    <img src="./resources/animals/elephant.png"/>
-                    <h3 class="hover-text card-text" aria-hidden="true">Elefante<br />Elephant<br /></h3>
-                    <audio id="audioelefante" class="SoundOnHover" src="resources/sounds/elefante elephant .aac" preload="auto" autoplay></audio>
+                <div id="elephant" class="card" tabindex="0">
+                    <img src="./resources/animals/elephant.png" alt="imagen de un elefante" />
+                    <p class="hover-text card-text" aria-hidden="true">Elefante<br />Elephant<br /></p>
                 </div>
             </div>
         </div>
@@ -65,4 +63,5 @@
         crossorigin="anonymous"></script>
     <script src="js/animalStudy.js"></script>
 </body>
+
 </html>

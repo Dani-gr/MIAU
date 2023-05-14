@@ -1,5 +1,4 @@
 const colorDivs = document.getElementById("PaletaDiv").children;
-//const colorDisplays = colorDivs[(color) => { color.firstElementChild }]
 const button = document.getElementById("changeColorsButton");
 const colors1 = [
     ["Verde", "Green"],
@@ -20,7 +19,44 @@ const botonpamostrar = document.getElementsByClassName("paramostrarcolors")[0];
 
 function mostrarContenidoColor() {
     document.getElementById("contenidocolors").style.display = "block";
-    botonpamostrar.style.display="none";
+    botonpamostrar.style.display = "none";
+
+    for (let i = 0; i < colorDivs.length; i++) {
+        const color = colorDivs.item(i);
+        if (!color) {
+            console.log("ERROR");
+            continue;
+        }
+        const colors = (i == 0 && color.getAttribute("class") !== "green") ? colors2 : colors1;
+        const colorName = colors[i];
+        color.setAttribute("class", colorName[1].toLowerCase());
+        const colorDisplay = color.firstElementChild;
+
+        if (!colorDisplay) {
+            console.log("ERROR");
+            continue;
+        }
+
+        colorDisplay.innerHTML = colorName[0] + "<br/>" + colorName[1] + "<br/>";
+
+        let audioFileName = "resources/sounds/" + colorName[0].toLowerCase() + " " + colorName[1].toLowerCase() + ".aac";
+
+        let audio = new Audio(audioFileName);
+        color.audio = audio;
+
+        color.addEventListener("keyup", function () {
+            color.audio.play();
+        });
+
+        color.addEventListener("mouseover", function () {
+            color.audio.play();
+        });
+
+        color.addEventListener("mouseout", function () {
+            color.audio.pause();
+            color.audio.currentTime = 0;
+        });
+    }
 }
 
 function mostrarBoton() {
@@ -36,21 +72,26 @@ function mostrarBoton() {
             colors = colors2;
 
         const colorName = colors[i];
-    
+
         let audioFileName = "resources/sounds/" + colorName[0].toLowerCase() + " " + colorName[1].toLowerCase() + ".aac";
-            
+
         let audio = new Audio(audioFileName);
         color.audio = audio;
 
-        color.addEventListener("keyup", function(){
+        color.addEventListener("keyup", function () {
             color.audio.play();
         })
-    
+
+        card.addEventListener("keydown", function () {
+            card.audio.pause();
+            card.audio.currentTime = 0;
+        });
+
         color.addEventListener("mouseover", function () {
             color.audio.play();
         });
-    
-        color.addEventListener("mouseout", function(){
+
+        color.addEventListener("mouseout", function () {
             color.audio.pause();
             color.audio.currentTime = 0;
         });
@@ -82,20 +123,19 @@ button.onclick = function () {
         colorDisplay.innerHTML = colorName[0] + "<br/>" + colorName[1] + "<br/>";
 
         let audioFileName = "resources/sounds/" + colorName[0].toLowerCase() + " " + colorName[1].toLowerCase() + ".aac";
-            
+
         let audio = new Audio(audioFileName);
         color.audio = audio;
 
-        color.addEventListener("keyup", function(){
+        color.addEventListener("keyup", function () {
             color.audio.play();
         })
-    
+
         color.addEventListener("mouseover", function () {
-            console.log(color.audio)
             color.audio.play();
         });
-    
-        color.addEventListener("mouseout", function(){
+
+        color.addEventListener("mouseout", function () {
             color.audio.pause();
             color.audio.currentTime = 0;
         });

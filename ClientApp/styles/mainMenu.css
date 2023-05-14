@@ -1,0 +1,290 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+
+/* Para navegadores webkit */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff69b4;
+  border-radius: 10px;
+}
+
+html {
+  scrollbar-color: #ffa3d1 #fff;
+  scrollbar-base-color: #ff8dd7;
+}
+
+h1 {
+  position: fixed;
+  top: 100px;
+  left: 132px;
+  transform: translateX(-50%); /* Mueve el elemento hacia la izquierda en la mitad de su ancho */
+  border: 3px solid #ff8dd7;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 173, 214);
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.umberto-wrapper{
+    position: relative; 
+    left: 0; 
+    top: 0;
+}
+
+.gato{
+    position: absolute; top: -6%;
+    right: 0; 
+    margin: 20px; 
+    z-index: 1; 
+    transform: scaleY(-1);
+}
+
+.imgMapa{
+    margin-bottom: 22%; 
+    margin-left: 3%; 
+    margin-right: 3%; 
+    height: auto; 
+    margin-top: 4%;
+}
+
+#practica{
+    background-color: #C3F1FF; 
+    width: 43%;
+}
+
+#imgPractica{
+    margin-bottom: 22%; 
+    margin-left: 3%; 
+    margin-right: 3%; 
+    height: auto; 
+    margin-top: 4%;
+}
+
+#btnpractica{
+    margin: 3%;
+    min-width: 23%;
+}
+
+#buttonMapa{
+    margin: 3%;
+    min-width: 23%;
+}
+
+.card botonPractica{
+    background-color: #C3F1FF; 
+    width: 43%;
+}
+
+#wrapperEstudio{
+    display: flex; 
+    flex-direction: column;
+}
+
+#estudio{
+    background-color: #C3F1FF; 
+    height: auto; 
+    width: 43%;
+}
+
+#imgEstudio{
+    margin-bottom: 10%; 
+    height: auto;
+}
+
+#tienda{
+    background-color: #C3F1FF; 
+    height: auto; 
+    width: 43%; 
+    margin-top: 1.5%;
+}
+
+#wrapperMapa{
+    width: 81%; 
+    position: absolute; 
+    top: 12%; left: 19%; 
+    display: flex; 
+    justify-content:center;
+}
+
+#back{
+    background: transparent !important; 
+    outline: none; 
+    border: 0; 
+    width: 60px;
+}
+
+  
+ header p{
+   text-align: center;
+   margin-bottom: 0;
+ }
+
+ table {
+  background-image: url("/MIAU/ClientApp/resources/fondo-cesped-hd.jpg");
+  background-size: cover;
+  width: 80%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+  padding-top: 30%;
+  margin-top: 80px; /* agrega margen superior */
+  overflow-y: scroll;
+}
+
+
+
+table tr {
+  height: 100px;
+}
+
+td {
+  width: 150px; /* ancho fijo */
+  height: 150px; /* altura fija */
+}
+
+td.filamentira {
+  height: auto;
+}
+
+
+td img.flecha-drc {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90%;
+  transform: rotate(-90deg) scaleX(-1);
+  margin-top: 40px;
+  margin-left: 2%;
+}
+
+td img.flecha-izq {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90%;
+  transform: rotate(-270deg);
+  margin-left: 75%;
+  margin-top: 10%;
+}
+
+.button1 {
+  background-color: #ef97ff;
+  border: 3px solid #f1c5ff;
+  height: 100%;
+  width: 100%;
+  margin: 0 10px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.button1 p, .button3 p {
+  margin-top: 10px;
+  width: 60%;
+  font-size: xx-large;
+  padding-left: 20px;
+}
+
+.button1, .button2, .button3 {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+}
+
+.button2 {
+  background-color: #a5d7df;
+  border: 3px solid #79a6ff;
+  height: 100%;
+  width: 100%;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.button2 p{
+  margin-top: 10px;
+  width: 60%;
+  font-size: xx-large;
+  padding-right: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button4 p {
+  width: 60%;
+  font-size: xx-large;
+  white-space: nowrap;
+}
+
+.button2 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.button3 {
+  background-color: #ffc46d;
+  border: 3px solid #ffaf2d;
+  height: 100%;
+  width: 100%;
+  margin: 0 10px;
+  border-radius: 20px;
+  display: flex;
+  
+  
+}
+
+.button4 {
+  background-color: #81ffb9;
+  border: 3px solid #009863;
+  height: 100%;
+  width: 100%;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+@keyframes salta {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-20px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+button.no-style {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-primary{
+    background-color: rgb(255, 173, 214) !important;
+    border-color: rgb(255, 173, 214) !important;
+    font-size: 1.5rem !important;
+  }
+
+
+a{
+    color: rgb(118, 32, 239) !important;
+    font-weight: 500 !important;
+}
+

@@ -1,120 +1,53 @@
-const uno = document.getElementById('n1');
-const dos = document.getElementById('n2');
-const tres = document.getElementById('n3');
-const cuatro = document.getElementById('n4');
-const cinco = document.getElementById('n5');
-const seis = document.getElementById('n6')
-const diez = document.getElementById("n10");
-const audiouno = document.getElementById('audiouno');
-const audiodos = document.getElementById('audiodos');
-const audiotres = document.getElementById('audiotres');
-const audiocuatro = document.getElementById('audiocuatro');
-const audiocinco = document.getElementById('audiocinco');
-const audioseis = document.getElementById('audioseis');
-const audiodiez = document.getElementById('audiodiez');
+const cards = [
+    document.getElementById('n1'),
+    document.getElementById('n2'),
+    document.getElementById('n3'),
+    document.getElementById('n4'),
+    document.getElementById('n5'),
+    document.getElementById('n6'),
+    document.getElementById("n10")
+]
+
+const fileNames = [
+    "uno one",
+    "dos two",
+    "tres three",
+    "cuatro four",
+    "cinco five",
+    "seis six",
+    "diez ten"
+]
 
 const botonpamostrarnumber = document.getElementsByClassName("paramostrarnumber")[0];
 
 function mostrarContenidoNumber() {
     document.getElementById("contenidonumber").style.display = "block";
-    botonpamostrarnumber.style.display="none";
+    botonpamostrarnumber.style.display = "none";
 }
-
-uno.addEventListener("keyup", function() {
-    console.log("esto debería ir")
-    audiouno.play();
-})
-
-uno.addEventListener("mouseover" , function() {
-    audiouno.play();
-});
-
-uno.addEventListener("mouseout", function() {
-    audiouno.pause();
-    audiouno.currentTime = 0;
-});
-
-dos.addEventListener("keyup" , function() {
-    audiodos.play();
-});
-
-dos.addEventListener("mouseover" , function() {
-    audiodos.play();
-});
-
-dos.addEventListener("mouseout", function() {
-    audiodos.pause();
-    audiodos.currentTime = 0;
-});
-
-tres.addEventListener("keyup" , function() {
-    audiotres.play();
-});
-
-tres.addEventListener("mouseover" , function() {
-    audiotres.play();
-});
-
-tres.addEventListener("mouseout", function() {
-    audiotres.pause();
-    audiotres.currentTime = 0;
-});
-
-cuatro.addEventListener("keyup" , function() {
-    audiocuatro.play();
-});
-
-
-cuatro.addEventListener("mouseover" , function() {
-    audiocuatro.play();
-});
-
-cuatro.addEventListener("mouseout", function() {
-    audiocuatro.pause();
-    audiocuatro.currentTime = 0;
-});
-
-cinco.addEventListener("keyup" , function() {
-    audiocinco.play();
-});
-
-cinco.addEventListener("mouseover" , function() {
-    audiocinco.play();
-});
-
-cinco.addEventListener("mouseout", function() {
-    audiocinco.pause();
-    audiocinco.currentTime = 0;
-});
-
-seis.addEventListener("keyup" , function() {
-    audioseis.play();
-});
-
-seis.addEventListener("mouseover" , function() {
-    audioseis.play();
-});
-
-seis.addEventListener("mouseout", function() {
-    audioseis.pause();
-    audioseis.currentTime = 0;
-});
-
-diez.addEventListener("keyup" , function() {
-    audiodiez.play();
-});
-
-diez.addEventListener("mouseover" , function() {
-    audiodiez.play();
-});
-
-diez.addEventListener("mouseout", function() {
-    audiodiez.pause();
-    audiodiez.currentTime = 0;
-});
 
 function mostrarBoton() {
     botonpamostrarnumber.style.display = "block";
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const filename = "resources/sounds/" + fileNames[i] + ".aac";
+        const audio = new Audio(filename);
+        card.audio = audio;
+
+        card.addEventListener("keyup", function () {
+            card.audio.play();
+        });
+        card.addEventListener("keydown", function () {
+            card.audio.pause();
+            card.audio.currentTime = 0;
+        });
+        card.addEventListener("mouseover", function () {
+            card.audio.play();
+        });
+        card.addEventListener("mouseout", function () {
+            card.audio.pause();
+            card.audio.currentTime = 0;
+        });
+    };
 }
 
 // Ejecutamos la función al cargar la página

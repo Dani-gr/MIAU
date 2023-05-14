@@ -137,3 +137,11 @@ div#pamostrarcolors {
     top: 50%;
     left:35%;
 }
+
+#PaletaDiv div p {
+    font-size: 21pt;
+}
+
+.blue p, .black p{
+    color: #ffffff;
+}
