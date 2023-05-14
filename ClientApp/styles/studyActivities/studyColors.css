@@ -121,8 +121,10 @@ h1 {
 
 div button.paramostrarcolors {
     background-color: #85d8e8;
-    height: 130px;
-    width: 550px;
+    min-height: 130px;
+    max-width: 550px;
+
+    width: 60vw;
 
     font-size: 40px;
     font-weight: 400;
@@ -134,14 +136,20 @@ div button.paramostrarcolors {
 
 div#pamostrarcolors {
     position: absolute;
-    top: 50%;
-    left:35%;
+    top: 40%;
+    left: 15vw;
+    right: 15vw;
+    min-height: 130px;
+    max-width: 550px;
+
+    width: 60vw;
 }
 
 #PaletaDiv div p {
     font-size: 21pt;
 }
 
-.blue p, .black p{
+.blue p,
+.black p {
     color: #ffffff;
 }
