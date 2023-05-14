@@ -19,6 +19,7 @@ const botonpamostraranimals = document.getElementsByClassName("paramostraranimal
 function mostrarContenidoAnimals() {
     document.getElementById("contenidoanimals").style.display = "block";
     botonpamostraranimals.style.display = "none";
+    botonpamostraranimals.parentElement.style.display = "none";
 }
 
 function mostrarBoton() {

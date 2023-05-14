@@ -78,7 +78,9 @@ body {
   min-height: 90%;
 }
 
-
+.Umberto {
+  max-width: 149px;
+}
 
 .salta2 {
   animation: salta2 1s linear infinite;
@@ -141,4 +143,15 @@ body {
 .bg-image {
   background-image: url('../resources/Background.png');
   height: 100vh;
+}
+
+#back {
+  background: transparent !important;
+  outline: none;
+  border: 0;
+  width: 60px;
+}
+
+#back img {
+  width: 40px;
 }

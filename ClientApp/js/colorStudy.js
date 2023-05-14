@@ -20,6 +20,7 @@ const botonpamostrar = document.getElementsByClassName("paramostrarcolors")[0];
 function mostrarContenidoColor() {
     document.getElementById("contenidocolors").style.display = "block";
     botonpamostrar.style.display = "none";
+    botonpamostrar.parentElement.style.display = "none";
 
     for (let i = 0; i < colorDivs.length; i++) {
         const color = colorDivs.item(i);
