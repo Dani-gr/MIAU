@@ -1,15 +1,15 @@
 function saltar(gatito, eventImages) {
   eventImages.forEach(image => {
     image.addEventListener("mouseenter", () => {
-      gatito.classList.add("salta");
+      if (gatito != null) gatito.classList.add("salta");
     });
-  
+
     image.addEventListener("mouseleave", () => {
-      gatito.classList.remove("salta");
+      if (gatito != null) gatito.classList.remove("salta");
     });
   });
 }
- 
+
 const gatito = document.getElementById("gatito");
 const eventImages = document.querySelectorAll(".botones");
 
@@ -21,13 +21,13 @@ const boton = document.querySelectorAll(".btn");
 
 saltar(gatete, boton);
 
-function mostrarBurbuja(botonPulsado, bubbleMostrar, bubbleBienvenida){
+function mostrarBurbuja(botonPulsado, bubbleMostrar, bubbleBienvenida) {
   botonPulsado.forEach(boton => {
     boton.addEventListener('mouseover', () => {
       bubbleMostrar.style.display = 'block';
       bubbleBienvenida.style.display = 'none';
     });
-  
+
     boton.addEventListener('mouseout', () => {
       bubbleMostrar.style.display = 'none';
       bubbleBienvenida.style.display = 'block';

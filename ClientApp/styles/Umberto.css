@@ -1,9 +1,13 @@
 @import url("./commonStyles.css");
 
 h1 {
-    color: rgb(51, 165, 171);
     text-align: center;
     padding-top: 80px;
+}
+
+.card {
+    min-width: 110px !important;
+    margin-bottom: 15px;
 }
 
 .card-img-top {
@@ -13,6 +17,7 @@ h1 {
 
 .col {
     max-width: 160px;
+    min-width: 114px;
 }
 
 .col #elementos {
@@ -21,4 +26,21 @@ h1 {
 
 .col #Umberto {
     max-width: fit-content;
+}
+
+#Umberto img {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card .card-body {
+    background-color: #a8a8a8;
+}
+
+.card.selected .card-body {
+    background-color: aqua;
+}
+
+.card {
+    cursor: pointer;
 }
