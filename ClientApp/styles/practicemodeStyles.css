@@ -24,8 +24,7 @@ h1 {
   background-color: #dfa7fb;
   border-color: #f1c5ff;
   border: width 2%;
-  color: #3B0A80
-  !important
+  color: #3B0A80 !important
 }
 
 .row-custom {
@@ -46,74 +45,81 @@ svg {
   background-size: contain;
 }
 
-.svgColores{
-  background-image: url("../resources/botonesTemas/FullBotonColores.svg");  
+.svgColores {
+  background-image: url("../resources/botonesTemas/FullBotonColores.svg");
 }
 
-.svgAnimales{
-  background-image: url("../resources/botonesTemas/FullBotonAnimales.svg");  
+.svgAnimales {
+  background-image: url("../resources/botonesTemas/FullBotonAnimales.svg");
 }
 
-.svgNumeros{
-  background-image: url("../resources/botonesTemas/FullBotonNumeros.svg");  
+.svgNumeros {
+  background-image: url("../resources/botonesTemas/FullBotonNumeros.svg");
 }
 
-.svgSoonMore{
+.svgSoonMore {
   background-image: url("../resources/botonesTemas/FullBotonSoonMore.svg");
 }
 
-.svgFlechaDer{
+.svgFlechaDer {
   background-image: url("../resources/flechasPracticeMode/flechaDer.svg");
   float: left;
 }
 
-.svgFlechaIzq{
+.svgFlechaIzq {
   background-image: url("../resources/flechasPracticeMode/flechaIzq.svg");
   float: right;
 }
-.svgBoton{
+
+.svgBoton {
   height: 100%;
   width: 100%;
 }
 
 
 @media (max-width: 768px) {
-  .svgColores{
-  background-image: url("../resources/botonesTemas/FullBotonColoresBig.svg");
-}
-.svgFlechaDer{
-  background-image: url("../resources/flechasPracticeMode/flechaBigDer.svg");
-}
-.svgNumeros{
-  background-image: url("../resources/botonesTemas/FullBotonNumerosBig.svg");
-}
-.svgAnimales{
-  background-image: url("../resources/botonesTemas/FullBotonAnimalesBig.svg");
-}
-.svgSoonMore {
-  background-image: url("../resources/botonesTemas/FullBotonSoonMoreBig.svg");
-}
+  .svgColores {
+    background-image: url("../resources/botonesTemas/FullBotonColoresBig.svg");
+  }
+
+  .svgFlechaDer {
+    background-image: url("../resources/flechasPracticeMode/flechaBigDer.svg");
+  }
+
+  .svgNumeros {
+    background-image: url("../resources/botonesTemas/FullBotonNumerosBig.svg");
+  }
+
+  .svgAnimales {
+    background-image: url("../resources/botonesTemas/FullBotonAnimalesBig.svg");
+  }
+
+  .svgSoonMore {
+    background-image: url("../resources/botonesTemas/FullBotonSoonMoreBig.svg");
+  }
 }
 
 @media (min-width: 992px) {
-  .svgAnimales{
-  background-image: url("../resources/botonesTemas/FullBotonAnimalesBig.svg");
-  
-}
+  .svgAnimales {
+    background-image: url("../resources/botonesTemas/FullBotonAnimalesBig.svg");
 
-.svgNumeros{
-  background-image: url("../resources/botonesTemas/FullBotonNumerosBig.svg");
-}
-.svgColores{
-  background-image: url("../resources/botonesTemas/FullBotonColoresBig.svg");
-}
-.svgFlechaDer{
-  background-image: url("../resources/flechasPracticeMode/flechaDer.svg");
-}
+  }
 
-.svgSoonMore {
-  background-image: url("../resources/botonesTemas/FullBotonSoonMoreBig.svg");
-}
+  .svgNumeros {
+    background-image: url("../resources/botonesTemas/FullBotonNumerosBig.svg");
+  }
+
+  .svgColores {
+    background-image: url("../resources/botonesTemas/FullBotonColoresBig.svg");
+  }
+
+  .svgFlechaDer {
+    background-image: url("../resources/flechasPracticeMode/flechaDer.svg");
+  }
+
+  .svgSoonMore {
+    background-image: url("../resources/botonesTemas/FullBotonSoonMoreBig.svg");
+  }
 }
 
 .col-custom {
@@ -122,11 +128,25 @@ svg {
 }
 
 @keyframes salta {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-20px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 button.no-style {
@@ -140,3 +160,6 @@ button.no-style {
   outline: none;
 }
 
+.bubble img {
+  min-width: 200px;
+}

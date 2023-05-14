@@ -23,6 +23,7 @@ const botonpamostrarnumber = document.getElementsByClassName("paramostrarnumber"
 function mostrarContenidoNumber() {
     document.getElementById("contenidonumber").style.display = "block";
     botonpamostrarnumber.style.display = "none";
+    botonpamostrarnumber.parentElement.style.display = "none";
 }
 
 function mostrarBoton() {

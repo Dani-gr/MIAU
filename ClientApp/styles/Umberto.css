@@ -16,7 +16,8 @@ h1 {
     margin: auto;
 }
 
-#a1 .card-img-top {
+#a1 .card-img-top,
+#a4 .card-img-top {
     max-width: unset;
 }
 

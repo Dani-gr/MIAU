@@ -63,8 +63,10 @@ h4 {
 
 div button.paramostraranimals {
     background-color: #85d8e8;
-    height: 130px;
-    width: 550px;
+    min-height: 130px;
+    max-width: 550px;
+
+    width: 60vw;
 
     font-size: 40px;
     font-weight: 400;
@@ -74,11 +76,15 @@ div button.paramostraranimals {
     align-self: center;
 }
 
-
 div#pamostraranimals {
     position: absolute;
-    top: 50%;
-    left:35%;
+    top: 40%;
+    left: 15vw;
+    right: 15vw;
+    min-height: 130px;
+    max-width: 550px;
+
+    width: 60vw;
 }
 
 p {
